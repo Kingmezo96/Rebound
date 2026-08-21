@@ -33,9 +33,9 @@ body {
 }
 
 .hero {
-  min-height: 94svh;
-  justify-content: flex-end;
-  padding-bottom: clamp(2.25rem, 5vw, 4rem);
+  min-height: 92svh;
+  justify-content: center;
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 
 .hero:before {
@@ -44,8 +44,8 @@ body {
   inset: 0;
   z-index: 0;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, .92), rgba(0, 0, 0, .16) 45%, rgba(0, 0, 0, .9)),
-    linear-gradient(180deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .92) 85%);
+    linear-gradient(90deg, rgba(0, 0, 0, .82), rgba(0, 0, 0, .12) 44%, rgba(0, 0, 0, .84)),
+    linear-gradient(180deg, rgba(0, 0, 0, .04), rgba(0, 0, 0, .9) 90%);
 }
 
 .hero:after {
@@ -72,21 +72,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 52% 30%;
-  filter: grayscale(.08) contrast(1.12) brightness(.72);
-  transform: scale(1.04);
+  object-position: 50% 50%;
+  filter: contrast(1.04) brightness(.9);
+  transform: scale(1.01);
 }
 
-.hero-copy-panel {
-  position: absolute;
-  z-index: 2;
-  top: clamp(8.75rem, 16vw, 12rem);
-  left: var(--pad);
-  width: min(25rem, calc(100vw - (var(--pad) * 2)));
-  color: #fff;
-}
-
-.hero-copy-panel p,
 .small-label,
 .event-card span {
   margin: 0 0 .85rem;
@@ -95,65 +85,45 @@ body {
   letter-spacing: .14em;
 }
 
-.hero-copy-panel span {
-  display: block;
-  color: rgba(255, 255, 255, .78);
-  font-size: clamp(.92rem, 1.45vw, 1.25rem);
-  line-height: 1.55;
-}
-
 .countdown-rail {
   position: absolute;
   z-index: 3;
-  right: var(--pad);
-  top: clamp(8.4rem, 15vw, 12rem);
-  width: min(30rem, 42vw);
+  left: var(--pad);
+  bottom: clamp(2rem, 4vw, 3.5rem);
+  width: min(18rem, calc(100vw - (var(--pad) * 2) - 7rem));
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, .28);
-  border-bottom: 1px solid rgba(255, 255, 255, .28);
-  background: rgba(0, 0, 0, .24);
-  backdrop-filter: blur(18px);
-}
-
-.countdown-track {
-  display: flex;
-  gap: 2rem;
-  width: max-content;
-  padding: .65rem 0;
-  color: rgba(255, 255, 255, .62);
-  font: 500 .62rem var(--mono);
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  animation: countdownMarquee 20s linear infinite;
-}
-
-.countdown-track span {
-  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, .22);
+  background: rgba(0, 0, 0, .18);
+  backdrop-filter: blur(14px);
 }
 
 .countdown-panel {
   display: grid;
-  gap: .85rem;
-  padding: 1.1rem 0 1.2rem;
+  grid-template-columns: auto 1fr;
+  gap: .75rem 1rem;
+  align-items: end;
+  padding: .85rem .95rem;
 }
 
 .countdown-panel p {
   margin: 0;
-  font: 600 .64rem var(--mono);
+  font: 600 .58rem var(--mono);
   text-transform: uppercase;
   letter-spacing: .16em;
 }
 
 .countdown-panel time {
   color: rgba(255, 255, 255, .72);
-  font: 400 .72rem var(--mono);
+  font: 400 .6rem var(--mono);
   text-transform: uppercase;
+  text-align: right;
 }
 
 .countdown {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: .55rem;
+  gap: .45rem;
 }
 
 .countdown span {
@@ -162,15 +132,15 @@ body {
 
 .countdown b {
   display: block;
-  font: clamp(1.7rem, 3vw, 3.25rem)/.82 var(--display);
+  font: clamp(1rem, 1.4vw, 1.45rem)/.82 var(--display);
   letter-spacing: 0;
 }
 
 .countdown small {
   display: block;
-  margin-top: .4rem;
+  margin-top: .28rem;
   color: rgba(255, 255, 255, .56);
-  font: 500 .58rem var(--mono);
+  font: 500 .48rem var(--mono);
   text-transform: uppercase;
   letter-spacing: .1em;
 }
@@ -183,11 +153,13 @@ body {
 
 .wordmark {
   z-index: 2;
+  align-self: center;
   text-shadow: 0 2rem 4rem rgba(0, 0, 0, .8);
 }
 
 .hero-bottom {
   z-index: 3;
+  justify-content: flex-end;
 }
 
 .hero-bottom p {
@@ -407,28 +379,19 @@ body.light-theme .event-card {
   }
 
   .hero {
-    min-height: 93svh;
+    min-height: 92svh;
     padding-bottom: 1.5rem;
   }
 
   .hero:before {
     background:
-      linear-gradient(180deg, rgba(0, 0, 0, .28), rgba(0, 0, 0, .16) 38%, rgba(0, 0, 0, .96)),
-      linear-gradient(90deg, rgba(0, 0, 0, .68), rgba(0, 0, 0, .08) 55%, rgba(0, 0, 0, .64));
+      linear-gradient(180deg, rgba(0, 0, 0, .18), rgba(0, 0, 0, .08) 40%, rgba(0, 0, 0, .94)),
+      linear-gradient(90deg, rgba(0, 0, 0, .62), rgba(0, 0, 0, .04) 55%, rgba(0, 0, 0, .58));
   }
 
   .hero-image img {
-    object-position: 52% 16%;
-    transform: scale(1.08);
-  }
-
-  .hero-copy-panel {
-    top: 7.8rem;
-    width: min(22rem, calc(100vw - (var(--pad) * 2)));
-  }
-
-  .hero-copy-panel span {
-    font-size: .86rem;
+    object-position: 50% 50%;
+    transform: scale(1.04);
   }
 
   .wordmark {
@@ -438,19 +401,23 @@ body.light-theme .event-card {
   }
 
   .countdown-rail {
-    top: auto;
     left: var(--pad);
-    right: var(--pad);
-    bottom: 9rem;
-    width: auto;
+    right: auto;
+    bottom: 1.25rem;
+    width: min(14.5rem, calc(100vw - (var(--pad) * 2) - 4.8rem));
   }
 
   .countdown-panel {
-    padding: .9rem 0 1rem;
+    gap: .5rem .7rem;
+    padding: .7rem .75rem;
   }
 
   .countdown b {
-    font-size: clamp(1.45rem, 8vw, 2.3rem);
+    font-size: clamp(.82rem, 3.8vw, 1.18rem);
+  }
+
+  .countdown small {
+    font-size: .38rem;
   }
 
   .showcase-grid {
