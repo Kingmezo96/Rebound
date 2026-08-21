@@ -322,44 +322,31 @@
 }
 
 .preorder-form > .checkout-button {
-  position: absolute;
-  top: -1.15rem;
-  right: -1.15rem;
-  width: clamp(4.6rem, 7vw, 6rem);
-  min-width: 0;
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, .16);
-  border-radius: 50%;
+  position: static;
+  justify-self: start;
+  min-width: clamp(10rem, 16vw, 13rem);
+  min-height: 3.7rem;
+  border: 1px solid #020511;
+  border-radius: 999px;
   background: #020511;
   color: #fff;
-  padding: 0;
-  font-size: 0;
+  padding: 0 1.45rem;
+  font: 850 .72rem/1 var(--display);
+  letter-spacing: .08em;
+  text-transform: uppercase;
   overflow: hidden;
 }
 
 .preorder-form > .checkout-button:before,
 .preorder-form > .checkout-button:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 1.75rem;
-  height: 1px;
-  background: currentColor;
-  transform: translateX(-50%);
-}
-
-.preorder-form > .checkout-button:before {
-  top: calc(50% - .34rem);
-}
-
-.preorder-form > .checkout-button:after {
-  top: calc(50% + .34rem);
+  content: none;
 }
 
 .preorder-form > .checkout-button:hover,
 .preorder-form > .checkout-button:focus-visible {
-  transform: translateY(-2px) scale(1.03);
-  background: #111827;
+  transform: translateY(-2px);
+  background: transparent;
+  color: #020511;
 }
 
 .checkout-button:disabled {

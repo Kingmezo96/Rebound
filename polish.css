@@ -1188,8 +1188,8 @@ body.light-theme .send-email:focus-visible {
 
 .home-pay-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: .3rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .9rem;
   align-items: center;
 }
 
@@ -1212,48 +1212,32 @@ body.light-theme .send-email:focus-visible {
 }
 
 .home-pay-row .checkout-button {
-  position: absolute;
-  top: -1rem;
-  right: -1rem;
-  width: clamp(4.3rem, 6.2vw, 5.6rem);
-  min-width: 0;
-  min-height: 0;
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, .16);
-  border-radius: 50%;
+  position: static;
+  min-width: clamp(8.5rem, 13vw, 11rem);
+  min-height: 3.65rem;
+  border: 1px solid #020511;
+  border-radius: 999px;
   background: #020511;
   color: #fff;
-  padding: 0;
+  padding: 0 1.35rem;
   cursor: pointer;
-  font-size: 0;
+  font: 850 .72rem/1 var(--display);
+  letter-spacing: .08em;
+  text-transform: uppercase;
   overflow: hidden;
   transition: transform .35s var(--brilio-ease), background .35s var(--brilio-ease), color .35s var(--brilio-ease), opacity .35s var(--brilio-ease);
 }
 
 .home-pay-row .checkout-button:before,
 .home-pay-row .checkout-button:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 1.65rem;
-  height: 1px;
-  background: currentColor;
-  transform: translateX(-50%);
-}
-
-.home-pay-row .checkout-button:before {
-  top: calc(50% - .32rem);
-}
-
-.home-pay-row .checkout-button:after {
-  top: calc(50% + .32rem);
+  content: none;
 }
 
 .home-pay-row .checkout-button:hover,
 .home-pay-row .checkout-button:focus-visible {
-  transform: translateY(-2px) scale(1.03);
-  background: #111827;
-  color: #fff;
+  transform: translateY(-2px);
+  background: transparent;
+  color: #020511;
 }
 
 .home-pay-row .checkout-button:disabled {
