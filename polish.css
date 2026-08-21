@@ -1211,6 +1211,44 @@ body.light-theme .send-email:focus-visible {
   border-bottom: 1px solid rgba(255, 255, 255, .24);
 }
 
+.author-portrait {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .015)),
+    #0b0b0d;
+  border-radius: 1.5rem;
+  box-shadow: 0 2.5rem 6rem rgba(0, 0, 0, .34);
+}
+
+.author-portrait:after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .64));
+  pointer-events: none;
+}
+
+.author-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  filter: contrast(1.04) saturate(.92);
+  transform: scale(1.01);
+}
+
+.author-name {
+  margin: clamp(1.6rem, 3vw, 3rem) 0 0;
+  color: rgba(255, 221, 183, .9) !important;
+  font: 700 clamp(1.05rem, 1.5vw, 1.45rem)/1 var(--display);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.author-copy h2 {
+  text-transform: none;
+}
+
 .manifesto-grid,
 .showcase-grid,
 .excerpt-grid {
@@ -1244,5 +1282,9 @@ body.light-theme .showcase-copy > p:not(.small-label) {
 
   .home-pay-row .checkout-button {
     width: 100%;
+  }
+
+  .author-portrait {
+    min-height: 32rem;
   }
 }
