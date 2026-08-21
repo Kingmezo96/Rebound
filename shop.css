@@ -9,12 +9,12 @@
 
 .shop-hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 84svh;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(18rem, 28rem);
   align-items: end;
-  gap: clamp(2rem, 6vw, 7rem);
-  padding: 8rem var(--pad) clamp(3rem, 6vw, 6rem);
+  gap: clamp(2rem, 5vw, 6rem);
+  padding: 7.2rem var(--pad) clamp(2.3rem, 4.2vw, 4.2rem);
   overflow: hidden;
   background: #080808;
 }
@@ -54,24 +54,24 @@
   color: rgba(255, 255, 255, .68);
   font: 700 .78rem/1 var(--display);
   letter-spacing: .18em;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .shop-hero h1 {
   margin: 0;
   color: #fff;
-  font: 900 clamp(4.4rem, 12vw, 13rem)/.78 var(--display);
-  letter-spacing: -.08em;
-  text-transform: uppercase;
+  font: 600 clamp(3.6rem, 8vw, 8.8rem)/.88 var(--display);
+  letter-spacing: -.065em;
+  text-transform: none;
   text-shadow: 0 2rem 5rem rgba(0, 0, 0, .78);
 }
 
 .shop-hero-content > p:not(.shop-kicker) {
-  width: min(32rem, 100%);
-  margin: 1.25rem 0 2rem;
-  color: rgba(255, 255, 255, .76);
-  font-size: clamp(.98rem, 1.2vw, 1.12rem);
-  line-height: 1.55;
+  width: min(34rem, 100%);
+  margin: 1rem 0 1.7rem;
+  color: rgba(255, 255, 255, .68);
+  font-size: clamp(.92rem, 1.08vw, 1.02rem);
+  line-height: 1.6;
 }
 
 .shop-cover {
@@ -121,36 +121,39 @@
     radial-gradient(circle at 18% 12%, rgba(255, 255, 255, .08), transparent 24rem),
     linear-gradient(180deg, #111013, #080808);
   color: #fff;
+  border-top-left-radius: clamp(2rem, 5vw, 6rem);
+  border-top-right-radius: clamp(2rem, 5vw, 6rem);
 }
 
 .preorder-grid {
   display: grid;
-  grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
-  gap: clamp(2rem, 6vw, 7rem);
+  grid-template-columns: minmax(15rem, .52fr) minmax(0, 1fr);
+  gap: clamp(1.8rem, 4.5vw, 5.5rem);
   align-items: start;
 }
 
 .preorder-copy h2 {
   margin: 0;
   color: #fff;
-  font: 900 clamp(2.8rem, 6.8vw, 7rem)/.84 var(--display);
-  letter-spacing: -.07em;
-  text-transform: uppercase;
+  font: 600 clamp(2.35rem, 4.8vw, 5.2rem)/.92 var(--display);
+  letter-spacing: -.06em;
+  text-transform: none;
 }
 
 .preorder-copy > p:not(.small-label) {
-  width: min(28rem, 100%);
-  color: rgba(255, 255, 255, .68);
-  font-size: 1rem;
-  line-height: 1.58;
+  width: min(25rem, 100%);
+  color: rgba(255, 255, 255, .58);
+  font-size: .94rem;
+  line-height: 1.62;
 }
 
 .selected-ticket {
-  width: min(21rem, 100%);
-  margin-top: 2rem;
-  padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, .16);
-  background: rgba(255, 255, 255, .06);
+  width: min(20rem, 100%);
+  margin-top: 1.55rem;
+  padding: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, .045);
   backdrop-filter: blur(16px);
 }
 
@@ -159,10 +162,10 @@
 .custom-amount label,
 .buyer-grid label {
   display: block;
-  color: rgba(255, 255, 255, .56);
-  font: 800 .66rem/1 var(--display);
+  color: rgba(255, 255, 255, .52);
+  font: 800 .62rem/1 var(--display);
   letter-spacing: .14em;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .selected-ticket strong,
@@ -173,19 +176,19 @@
 
 .selected-ticket strong {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: .95rem;
   text-transform: uppercase;
 }
 
 .selected-ticket b {
   color: #ffddb7;
-  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-size: clamp(1.9rem, 3.4vw, 3.1rem);
   line-height: .9;
 }
 
 .preorder-form {
   display: grid;
-  gap: 1.15rem;
+  gap: .9rem;
 }
 
 .tier-grid {
@@ -195,10 +198,11 @@
 }
 
 .tier-card {
-  min-height: 12rem;
-  padding: 1.1rem;
-  border: 1px solid rgba(255, 255, 255, .14);
-  background: rgba(255, 255, 255, .05);
+  min-height: 9rem;
+  padding: 1.05rem;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 1.2rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .026));
   color: #fff;
   cursor: pointer;
   text-align: left;
@@ -208,34 +212,35 @@
 .tier-card:hover,
 .tier-card:focus-visible,
 .tier-card.active {
-  transform: translateY(-4px);
-  border-color: rgba(255, 221, 183, .68);
-  background: rgba(255, 221, 183, .09);
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, .34);
+  transform: translateY(-3px);
+  border-color: rgba(255, 221, 183, .62);
+  background: linear-gradient(145deg, rgba(255, 221, 183, .12), rgba(255, 255, 255, .035));
+  box-shadow: 0 1.6rem 3.5rem rgba(0, 0, 0, .28);
 }
 
 .tier-card strong {
   display: block;
-  margin: 2.8rem 0 .75rem;
+  margin: 1.55rem 0 .55rem;
   color: #fff;
-  font-size: clamp(1.65rem, 2.7vw, 2.7rem);
+  font-size: clamp(1.3rem, 2vw, 2.05rem);
   line-height: .95;
   letter-spacing: -.05em;
 }
 
 .tier-card small {
-  color: rgba(255, 255, 255, .58);
-  font-size: .82rem;
+  color: rgba(255, 255, 255, .55);
+  font-size: .78rem;
   line-height: 1.35;
 }
 
 .custom-amount,
 .buyer-grid {
   display: grid;
-  gap: .85rem;
-  padding: 1.1rem;
-  border: 1px solid rgba(255, 255, 255, .12);
-  background: rgba(255, 255, 255, .045);
+  gap: .78rem;
+  padding: 1.05rem;
+  border: 1px solid rgba(255, 255, 255, .11);
+  border-radius: 1.2rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .022));
 }
 
 .amount-input {
@@ -256,8 +261,8 @@
   border: 0;
   background: transparent;
   color: #fff;
-  padding: .95rem 0;
-  font: 700 1rem var(--display);
+  padding: .82rem 0;
+  font: 650 .95rem var(--display);
   outline: none;
 }
 
@@ -272,9 +277,9 @@
   border-radius: 999px;
   background: #fff;
   color: #090909;
-  padding: .95rem 1.2rem;
+  padding: .84rem 1.08rem;
   cursor: pointer;
-  font: 900 .72rem/1 var(--display);
+  font: 850 .66rem/1 var(--display);
   letter-spacing: .1em;
   text-transform: uppercase;
   transition: transform .35s var(--brilio-ease), background .35s var(--brilio-ease), color .35s var(--brilio-ease), opacity .35s var(--brilio-ease);
@@ -311,7 +316,7 @@
   min-height: 1.4em;
   margin: .1rem 0 0;
   color: rgba(255, 255, 255, .78);
-  font-size: .86rem;
+  font-size: .78rem;
   line-height: 1.45;
 }
 
@@ -389,7 +394,7 @@ body.light-theme .use-custom:focus-visible {
 @media (max-width: 760px) {
   .shop-hero {
     min-height: auto;
-    padding-top: 7rem;
+    padding-top: 6.8rem;
   }
 
   .shop-hero h1 {

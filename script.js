@@ -99,11 +99,13 @@ if (form) {
     const email = form.querySelector('#email');
     const phone = form.querySelector('#phone');
     const message = form.querySelector('#message');
+    const service = form.querySelector('#service');
     const status = form.querySelector('.form-status');
     const submitButton = form.querySelector('button[type="submit"]');
-    const firstInvalid = [name, email, phone, message].find(field => !field.checkValidity());
+    const requiredFields = [...form.querySelectorAll('input[required], textarea[required], select[required]')];
+    const firstInvalid = requiredFields.find(field => !field.checkValidity());
     if (firstInvalid) {
-      status.textContent = 'Please complete your name, email address, phone number, and short message.';
+      status.textContent = 'Please complete the required fields before sending.';
       firstInvalid.focus();
       return;
     }
@@ -124,7 +126,8 @@ if (form) {
       form.reset();
     } catch (error) {
       const subject = encodeURIComponent('Rebound inquiry');
-      const body = encodeURIComponent(`Name: ${name.value}\nEmail: ${email.value}\nPhone: ${phone.value}\n\nMessage:\n${message.value}`);
+      const serviceLine = service ? `Service: ${service.value}\n` : '';
+      const body = encodeURIComponent(`Name: ${name.value}\nEmail: ${email.value}\nPhone: ${phone.value}\n${serviceLine}\nMessage:\n${message.value}`);
       status.textContent = 'Direct send needs activation, opening your email app instead.';
       window.location.href = `mailto:email.reboundbysol@gmail.com?subject=${subject}&body=${body}`;
     } finally {

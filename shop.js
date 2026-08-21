@@ -7,19 +7,19 @@ const naira = new Intl.NumberFormat('en-NG', {
   maximumFractionDigits: 0
 });
 
-const paystackForm = document.querySelector('[data-paystack-form]');
-
-if (paystackForm) {
+document.querySelectorAll('[data-paystack-form]').forEach(paystackForm => {
+  const root = paystackForm.closest('section') || document;
   const tierButtons = [...paystackForm.querySelectorAll('.tier-card')];
-  const customAmount = paystackForm.querySelector('#custom-amount');
+  const customAmount = paystackForm.querySelector('[name="customAmount"]');
   const useCustom = paystackForm.querySelector('.use-custom');
-  const selectedLabel = document.querySelector('[data-selected-label]');
-  const selectedAmount = document.querySelector('[data-selected-amount]');
+  const selectedLabel = root.querySelector('[data-selected-label]');
+  const selectedAmount = root.querySelector('[data-selected-amount]');
   const status = paystackForm.querySelector('.pay-status');
   const checkoutButton = paystackForm.querySelector('.checkout-button');
-  const buyerName = paystackForm.querySelector('#buyer-name');
-  const buyerEmail = paystackForm.querySelector('#buyer-email');
-  const buyerPhone = paystackForm.querySelector('#buyer-phone');
+  const buyerName = paystackForm.querySelector('[name="name"]');
+  const buyerEmail = paystackForm.querySelector('[name="email"]');
+  const buyerPhone = paystackForm.querySelector('[name="phone"]');
+  const quickPay = paystackForm.hasAttribute('data-quick-pay');
 
   let preorder = {
     tier: 'regular',
@@ -29,8 +29,8 @@ if (paystackForm) {
 
   function updateSelected(next) {
     preorder = next;
-    selectedLabel.textContent = preorder.label;
-    selectedAmount.textContent = naira.format(preorder.amount);
+    if (selectedLabel) selectedLabel.textContent = preorder.label;
+    if (selectedAmount) selectedAmount.textContent = naira.format(preorder.amount);
     tierButtons.forEach(button => {
       const active = button.dataset.tier === preorder.tier;
       button.classList.toggle('active', active);
@@ -38,51 +38,28 @@ if (paystackForm) {
     });
   }
 
-  tierButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      updateSelected({
-        tier: button.dataset.tier,
-        label: button.querySelector('span').textContent,
-        amount: Number(button.dataset.amount)
-      });
-      status.textContent = '';
-    });
-  });
+  function fieldInvalid(field) {
+    return field && !field.checkValidity();
+  }
 
-  useCustom.addEventListener('click', () => {
-    const amount = Number(customAmount.value);
-    if (!Number.isFinite(amount) || amount < MIN_PREORDER_AMOUNT) {
-      status.textContent = `Please enter ${naira.format(MIN_PREORDER_AMOUNT)} or above.`;
-      customAmount.focus();
-      return;
-    }
+  function getBuyerValue(field) {
+    return field ? field.value.trim() : '';
+  }
 
-    updateSelected({
-      tier: 'custom',
-      label: 'Custom',
-      amount: Math.round(amount)
-    });
-    status.textContent = 'Custom preorder amount selected.';
-  });
-
-  paystackForm.addEventListener('submit', event => {
-    event.preventDefault();
-    const firstInvalid = [buyerName, buyerEmail, buyerPhone].find(field => !field.checkValidity());
+  function startCheckout() {
+    const requiredFields = [buyerName, buyerEmail, buyerPhone].filter(Boolean);
+    const firstInvalid = requiredFields.find(fieldInvalid);
 
     if (firstInvalid) {
-      status.textContent = 'Please complete your name, email address, and phone number.';
+      const label = firstInvalid.name === 'email' ? 'email address' : firstInvalid.name;
+      status.textContent = `Please add your ${label}.`;
       firstInvalid.focus();
       return;
     }
 
     if (preorder.amount < MIN_PREORDER_AMOUNT) {
       status.textContent = `Please enter ${naira.format(MIN_PREORDER_AMOUNT)} or above.`;
-      customAmount.focus();
-      return;
-    }
-
-    if (!PAYSTACK_PUBLIC_KEY || PAYSTACK_PUBLIC_KEY.includes('PASTE_YOUR')) {
-      status.textContent = 'Paystack is ready for setup. Add your public key to activate live checkout.';
+      if (customAmount) customAmount.focus();
       return;
     }
 
@@ -96,33 +73,24 @@ if (paystackForm) {
 
     const reference = `REB-${Date.now()}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
     const popup = new PaystackPop();
+    const name = getBuyerValue(buyerName);
+    const email = getBuyerValue(buyerEmail);
+    const phone = getBuyerValue(buyerPhone);
 
     popup.newTransaction({
       key: PAYSTACK_PUBLIC_KEY,
-      email: buyerEmail.value.trim(),
+      email,
       amount: preorder.amount * 100,
       currency: 'NGN',
       reference,
       metadata: {
-        name: buyerName.value.trim(),
-        phone: buyerPhone.value.trim(),
+        name,
+        phone,
         preorder_tier: preorder.label,
         custom_fields: [
-          {
-            display_name: 'Name',
-            variable_name: 'name',
-            value: buyerName.value.trim()
-          },
-          {
-            display_name: 'Phone',
-            variable_name: 'phone',
-            value: buyerPhone.value.trim()
-          },
-          {
-            display_name: 'Pre-order Tier',
-            variable_name: 'preorder_tier',
-            value: preorder.label
-          }
+          { display_name: 'Name', variable_name: 'name', value: name },
+          { display_name: 'Phone', variable_name: 'phone', value: phone },
+          { display_name: 'Pre-order Tier', variable_name: 'preorder_tier', value: preorder.label }
         ]
       },
       onSuccess: transaction => {
@@ -140,5 +108,40 @@ if (paystackForm) {
         checkoutButton.disabled = false;
       }
     });
+  }
+
+  tierButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      updateSelected({
+        tier: button.dataset.tier,
+        label: button.querySelector('span').textContent,
+        amount: Number(button.dataset.amount)
+      });
+      status.textContent = '';
+      if (quickPay && buyerEmail && buyerEmail.checkValidity()) startCheckout();
+    });
   });
-}
+
+  if (useCustom && customAmount) {
+    useCustom.addEventListener('click', () => {
+      const amount = Number(customAmount.value);
+      if (!Number.isFinite(amount) || amount < MIN_PREORDER_AMOUNT) {
+        status.textContent = `Please enter ${naira.format(MIN_PREORDER_AMOUNT)} or above.`;
+        customAmount.focus();
+        return;
+      }
+
+      updateSelected({
+        tier: 'custom',
+        label: 'Custom',
+        amount: Math.round(amount)
+      });
+      status.textContent = 'Custom preorder amount selected.';
+    });
+  }
+
+  paystackForm.addEventListener('submit', event => {
+    event.preventDefault();
+    startCheckout();
+  });
+});
