@@ -128,16 +128,16 @@
 
 .preorder-grid {
   display: grid;
-  grid-template-columns: minmax(15rem, .52fr) minmax(0, 1fr);
-  gap: clamp(1.8rem, 4.5vw, 5.5rem);
+  grid-template-columns: minmax(16rem, .42fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 7rem);
   align-items: start;
 }
 
 .preorder-copy h2 {
   margin: 0;
   color: #fff;
-  font: 520 clamp(2.15rem, 4.2vw, 4.6rem)/.92 var(--display);
-  letter-spacing: -.06em;
+  font: 520 clamp(2.8rem, 5vw, 6rem)/.94 var(--display);
+  letter-spacing: -.065em;
   text-transform: none;
 }
 
@@ -149,13 +149,14 @@
 }
 
 .selected-ticket {
-  width: min(20rem, 100%);
-  margin-top: 1.55rem;
-  padding: 1.1rem;
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, .045);
-  backdrop-filter: blur(16px);
+  width: min(22rem, 100%);
+  margin-top: clamp(1.8rem, 3.4vw, 3rem);
+  padding: 1.35rem;
+  border: 0;
+  border-radius: 1.75rem;
+  background: #f4f4f6;
+  color: #070a12;
+  backdrop-filter: none;
 }
 
 .selected-ticket span,
@@ -163,9 +164,9 @@
 .custom-amount label,
 .buyer-grid label {
   display: block;
-  color: rgba(255, 255, 255, .52);
-  font: 800 .62rem/1 var(--display);
-  letter-spacing: .14em;
+  color: rgba(7, 10, 18, .48);
+  font: 760 .7rem/1 var(--display);
+  letter-spacing: .04em;
   text-transform: lowercase;
 }
 
@@ -176,37 +177,43 @@
 }
 
 .selected-ticket strong {
-  color: #fff;
+  color: #070a12;
   font-size: .95rem;
   text-transform: uppercase;
 }
 
 .selected-ticket b {
-  color: #ffddb7;
+  color: #070a12;
   font-size: clamp(1.9rem, 3.4vw, 3.1rem);
   line-height: .9;
 }
 
 .preorder-form {
+  position: relative;
   display: grid;
-  gap: .9rem;
+  gap: 1.25rem;
+  padding: clamp(1.35rem, 3vw, 2.7rem);
+  border-radius: clamp(1.8rem, 4vw, 3.5rem);
+  background: #f4f4f6;
+  color: #070a12;
+  box-shadow: 0 2.4rem 6rem rgba(0, 0, 0, .3);
 }
 
 .tier-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .85rem;
+  gap: .72rem;
 }
 
 .tier-card {
-  min-height: 8.4rem;
-  padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 1rem;
-  background: linear-gradient(145deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .026));
-  color: #fff;
+  min-height: auto;
+  padding: .95rem 1rem;
+  border: 1px solid rgba(7, 10, 18, .38);
+  border-radius: 999px;
+  background: transparent;
+  color: #070a12;
   cursor: pointer;
-  text-align: left;
+  text-align: center;
   transition: transform .35s var(--brilio-ease), border-color .35s var(--brilio-ease), background .35s var(--brilio-ease), box-shadow .35s var(--brilio-ease);
 }
 
@@ -214,45 +221,44 @@
 .tier-card:focus-visible,
 .tier-card.active {
   transform: translateY(-3px);
-  border-color: rgba(255, 221, 183, .62);
-  background: linear-gradient(145deg, rgba(255, 221, 183, .12), rgba(255, 255, 255, .035));
-  box-shadow: 0 1.6rem 3.5rem rgba(0, 0, 0, .28);
+  border-color: #070a12;
+  background: #070a12;
+  color: #fff;
+  box-shadow: none;
 }
 
 .tier-card strong {
   display: block;
-  margin: 1.55rem 0 .55rem;
-  color: #fff;
-  font-size: clamp(1.3rem, 2vw, 2.05rem);
-  line-height: .95;
-  letter-spacing: -.05em;
+  margin: .45rem 0 0;
+  color: currentColor;
+  font-size: clamp(1rem, 1.55vw, 1.45rem);
+  line-height: 1;
+  letter-spacing: -.04em;
 }
 
 .tier-card small {
-  color: rgba(255, 255, 255, .55);
-  font-size: .78rem;
-  line-height: 1.35;
+  display: none;
 }
 
 .custom-amount,
 .buyer-grid {
   display: grid;
-  gap: .78rem;
-  padding: 1.05rem;
-  border: 1px solid rgba(255, 255, 255, .11);
-  border-radius: 1rem;
-  background: linear-gradient(145deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .022));
+  gap: .5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .amount-input {
   display: flex;
   align-items: center;
   gap: .65rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .22);
+  border-bottom: 1px solid rgba(7, 10, 18, .16);
 }
 
 .amount-input span {
-  color: rgba(255, 221, 183, .8);
+  color: rgba(7, 10, 18, .56);
   font-weight: 900;
 }
 
@@ -261,23 +267,23 @@
   width: 100%;
   border: 0;
   background: transparent;
-  color: #fff;
-  padding: .82rem 0;
-  font: 650 .95rem var(--display);
+  color: #070a12;
+  padding: .95rem 0 1rem;
+  font: 650 1rem var(--display);
   outline: none;
 }
 
 .amount-input input::placeholder,
 .buyer-grid input::placeholder {
-  color: rgba(255, 255, 255, .32);
+  color: rgba(7, 10, 18, .42);
 }
 
 .use-custom,
 .checkout-button {
-  border: 1px solid rgba(255, 255, 255, .85);
+  border: 1px solid rgba(7, 10, 18, .78);
   border-radius: 999px;
-  background: #fff;
-  color: #090909;
+  background: transparent;
+  color: #070a12;
   padding: .84rem 1.08rem;
   cursor: pointer;
   font: 850 .66rem/1 var(--display);
@@ -290,21 +296,55 @@
   justify-self: start;
   padding: .72rem 1rem;
   background: transparent;
-  color: #fff;
+  color: #070a12;
 }
 
 .use-custom:hover,
 .use-custom:focus-visible {
-  background: #fff;
-  color: #090909;
+  background: #070a12;
+  color: #fff;
   transform: translateY(-2px);
+}
+
+.buyer-grid .input-row {
+  border-bottom: 1px solid rgba(7, 10, 18, .16);
+}
+
+.buyer-grid label {
+  margin-top: .55rem;
 }
 
 .checkout-button:hover,
 .checkout-button:focus-visible {
-  background: transparent;
+  background: #070a12;
   color: #fff;
   transform: translateY(-2px);
+}
+
+.preorder-form > .checkout-button {
+  position: absolute;
+  top: -1.15rem;
+  right: -1.15rem;
+  width: clamp(4.6rem, 7vw, 6rem);
+  min-width: 0;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 50%;
+  background: #020511;
+  color: #fff;
+  padding: 0;
+  font-size: 0;
+}
+
+.preorder-form > .checkout-button:after {
+  content: "↗";
+  font: 500 1.28rem/1 var(--display);
+}
+
+.preorder-form > .checkout-button:hover,
+.preorder-form > .checkout-button:focus-visible {
+  transform: translateY(-2px) scale(1.03);
+  background: #111827;
 }
 
 .checkout-button:disabled {
@@ -316,7 +356,7 @@
 .pay-status {
   min-height: 1.4em;
   margin: .1rem 0 0;
-  color: rgba(255, 255, 255, .78);
+  color: rgba(7, 10, 18, .58);
   font-size: .78rem;
   line-height: 1.45;
 }
@@ -350,6 +390,17 @@ body.light-theme .custom-amount,
 body.light-theme .buyer-grid {
   border-color: rgba(0, 0, 0, .13);
   background: rgba(255, 255, 255, .5);
+}
+
+body.light-theme .preorder-form,
+body.light-theme .selected-ticket {
+  background: #f4f4f6;
+}
+
+body.light-theme .tier-card.active {
+  border-color: #070a12;
+  background: #070a12;
+  color: #fff;
 }
 
 body.light-theme .selected-ticket span,
@@ -400,6 +451,18 @@ body.light-theme .use-custom:focus-visible {
 
   .shop-hero h1 {
     font-size: clamp(3.3rem, 15vw, 5rem);
+  }
+
+  .preorder-form > .checkout-button {
+    position: static;
+    width: 100%;
+    aspect-ratio: auto;
+    min-height: 3.35rem;
+    font-size: .66rem;
+  }
+
+  .preorder-form > .checkout-button:after {
+    content: none;
   }
 }
 
