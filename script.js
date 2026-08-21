@@ -2,9 +2,10 @@ const loader = document.querySelector('.loader');
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const themeToggle = document.querySelector('.theme-toggle');
 const countdown = document.querySelector('[data-countdown]');
+const cursor = document.querySelector('#cursor');
 
 window.addEventListener('load', () => {
-  window.setTimeout(() => loader.classList.add('done'), reduced ? 0 : 850);
+  window.setTimeout(() => loader.classList.add('done'), reduced ? 0 : 1450);
 });
 
 const storedTheme = window.localStorage.getItem('rebound-theme');
@@ -20,6 +21,40 @@ function setTheme(theme) {
 
 setTheme(storedTheme === 'light' ? 'light' : 'dark');
 themeToggle.addEventListener('click', () => setTheme(document.body.classList.contains('light-theme') ? 'dark' : 'light'));
+
+if (cursor && !reduced) {
+  let cursorX = -50;
+  let cursorY = -50;
+  let targetX = cursorX;
+  let targetY = cursorY;
+
+  window.addEventListener('mousemove', event => {
+    targetX = event.clientX;
+    targetY = event.clientY;
+    cursor.style.opacity = '1';
+  });
+
+  function renderCursor() {
+    cursorX += (targetX - cursorX) * .22;
+    cursorY += (targetY - cursorY) * .22;
+    cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+    requestAnimationFrame(renderCursor);
+  }
+  renderCursor();
+
+  document.querySelectorAll('a, button').forEach(element => {
+    element.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+    element.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+  });
+}
+
+document.querySelectorAll('.circle-link, .pill, .text-link, .event-card a, .direct-email').forEach(element => {
+  element.addEventListener('pointermove', event => {
+    const rect = element.getBoundingClientRect();
+    element.style.setProperty('--magnet-x', `${event.clientX - rect.left}px`);
+    element.style.setProperty('--magnet-y', `${event.clientY - rect.top}px`);
+  });
+});
 
 function updateCountdown() {
   if (!countdown) return;
