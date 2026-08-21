@@ -132,16 +132,16 @@ body {
 }
 
 .theme-toggle {
-  border: 1px solid rgba(255, 255, 255, .35);
-  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .055);
   color: inherit;
   border-radius: 999px;
-  padding: .62rem .95rem;
-  margin-right: 1rem;
+  padding: .55rem .82rem;
+  margin-left: clamp(1rem, 2.4vw, 2rem);
   cursor: pointer;
-  font: 500 .68rem var(--mono);
-  text-transform: uppercase;
-  letter-spacing: .08em;
+  font: 700 .62rem/1 var(--display);
+  text-transform: lowercase;
+  letter-spacing: .04em;
   transition: background .35s var(--brilio-ease), color .35s var(--brilio-ease), border-color .35s var(--brilio-ease), transform .35s var(--brilio-ease);
 }
 
@@ -155,8 +155,11 @@ body {
 
 .site-header {
   position: fixed;
+  display: flex;
+  align-items: center;
   color: #f9f9f9;
-  background: linear-gradient(180deg, rgba(17, 16, 19, .72), transparent);
+  padding: clamp(1.3rem, 2vw, 2.25rem) var(--pad);
+  background: linear-gradient(180deg, rgba(17, 16, 19, .76), rgba(17, 16, 19, .18), transparent);
   border-bottom: 0;
 }
 
@@ -168,18 +171,34 @@ body {
 }
 
 .brand {
-  font-weight: 800;
-  letter-spacing: -.04em;
+  flex: 0 0 auto;
+  color: inherit;
+  font: 800 clamp(1.55rem, 2.35vw, 2.75rem)/1 var(--display);
+  letter-spacing: -.055em;
+  text-transform: none;
 }
 
 .desktop-nav {
-  font-weight: 600;
-  letter-spacing: .02em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: clamp(1.6rem, 3vw, 4rem);
+  margin: 0 0 0 auto;
+  font: 750 clamp(.98rem, 1.25vw, 1.28rem)/1 var(--display);
+  letter-spacing: -.035em;
+  text-transform: none;
 }
 
 .desktop-nav a,
 .header-cta {
   position: relative;
+  color: rgba(255, 255, 255, .96);
+}
+
+.desktop-nav a.active,
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible {
+  color: rgba(255, 255, 255, .58);
 }
 
 .desktop-nav a:after,
@@ -189,12 +208,13 @@ body {
   left: 0;
   bottom: -.45rem;
   width: 0;
-  height: 2px;
+  height: 1px;
   background: currentColor;
   transition: width .35s var(--brilio-ease);
 }
 
 .desktop-nav a:hover:after,
+.desktop-nav a.active:after,
 .header-cta:hover:after {
   width: 100%;
 }
@@ -610,6 +630,17 @@ body.light-theme .site-header {
   background: rgba(247, 247, 243, .84);
   border-color: rgba(0, 0, 0, .12);
   backdrop-filter: blur(18px);
+}
+
+body.light-theme .desktop-nav a,
+body.light-theme .header-cta {
+  color: rgba(10, 10, 10, .92);
+}
+
+body.light-theme .desktop-nav a.active,
+body.light-theme .desktop-nav a:hover,
+body.light-theme .desktop-nav a:focus-visible {
+  color: rgba(10, 10, 10, .52);
 }
 
 body.light-theme #cursor {

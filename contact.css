@@ -8,6 +8,16 @@
   background: linear-gradient(180deg, rgba(246, 245, 242, .92), rgba(246, 245, 242, .5), transparent);
 }
 
+.contact-page .desktop-nav a {
+  color: rgba(7, 10, 18, .92);
+}
+
+.contact-page .desktop-nav a.active,
+.contact-page .desktop-nav a:hover,
+.contact-page .desktop-nav a:focus-visible {
+  color: rgba(7, 10, 18, .52);
+}
+
 .contact-page .menu-toggle span {
   background: #070a12;
 }
