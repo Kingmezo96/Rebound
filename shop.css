@@ -9,12 +9,12 @@
 
 .shop-hero {
   position: relative;
-  min-height: 84svh;
+  min-height: 78svh;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, 28rem);
+  grid-template-columns: minmax(0, .92fr) minmax(17rem, 25rem);
   align-items: end;
-  gap: clamp(2rem, 5vw, 6rem);
-  padding: 7.2rem var(--pad) clamp(2.3rem, 4.2vw, 4.2rem);
+  gap: clamp(1.8rem, 4.5vw, 5rem);
+  padding: 7rem var(--pad) clamp(2rem, 3.6vw, 3.6rem);
   overflow: hidden;
   background: #080808;
 }
@@ -31,7 +31,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 52% center;
-  filter: contrast(1.08) brightness(.68) saturate(.76);
+  filter: contrast(1.12) brightness(.62) saturate(.72);
   transform: scale(1.02);
   animation: shopDrift 18s ease-in-out infinite alternate;
 }
@@ -50,9 +50,9 @@
 }
 
 .shop-kicker {
-  margin: 0 0 1.1rem;
+  margin: 0 0 .9rem;
   color: rgba(255, 255, 255, .68);
-  font: 700 .78rem/1 var(--display);
+  font: 800 .68rem/1 var(--display);
   letter-spacing: .18em;
   text-transform: lowercase;
 }
@@ -60,23 +60,24 @@
 .shop-hero h1 {
   margin: 0;
   color: #fff;
-  font: 600 clamp(3.6rem, 8vw, 8.8rem)/.88 var(--display);
-  letter-spacing: -.065em;
+  max-width: 12ch;
+  font: 520 clamp(3rem, 6.1vw, 6.75rem)/.9 var(--display);
+  letter-spacing: -.06em;
   text-transform: none;
   text-shadow: 0 2rem 5rem rgba(0, 0, 0, .78);
 }
 
 .shop-hero-content > p:not(.shop-kicker) {
-  width: min(34rem, 100%);
-  margin: 1rem 0 1.7rem;
-  color: rgba(255, 255, 255, .68);
-  font-size: clamp(.92rem, 1.08vw, 1.02rem);
-  line-height: 1.6;
+  width: min(25rem, 100%);
+  margin: .9rem 0 1.45rem;
+  color: rgba(255, 255, 255, .7);
+  font-size: clamp(.88rem, 1vw, .98rem);
+  line-height: 1.55;
 }
 
 .shop-cover {
   justify-self: end;
-  width: min(23rem, 34vw);
+  width: min(20.5rem, 30vw);
   margin: 0;
   perspective: 1200px;
 }
@@ -121,8 +122,8 @@
     radial-gradient(circle at 18% 12%, rgba(255, 255, 255, .08), transparent 24rem),
     linear-gradient(180deg, #111013, #080808);
   color: #fff;
-  border-top-left-radius: clamp(2rem, 5vw, 6rem);
-  border-top-right-radius: clamp(2rem, 5vw, 6rem);
+  border-top-left-radius: clamp(1.6rem, 4vw, 4.8rem);
+  border-top-right-radius: clamp(1.6rem, 4vw, 4.8rem);
 }
 
 .preorder-grid {
@@ -135,7 +136,7 @@
 .preorder-copy h2 {
   margin: 0;
   color: #fff;
-  font: 600 clamp(2.35rem, 4.8vw, 5.2rem)/.92 var(--display);
+  font: 520 clamp(2.15rem, 4.2vw, 4.6rem)/.92 var(--display);
   letter-spacing: -.06em;
   text-transform: none;
 }
@@ -152,7 +153,7 @@
   margin-top: 1.55rem;
   padding: 1.1rem;
   border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 1.15rem;
+  border-radius: 1rem;
   background: rgba(255, 255, 255, .045);
   backdrop-filter: blur(16px);
 }
@@ -198,10 +199,10 @@
 }
 
 .tier-card {
-  min-height: 9rem;
-  padding: 1.05rem;
+  min-height: 8.4rem;
+  padding: 1rem;
   border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   background: linear-gradient(145deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .026));
   color: #fff;
   cursor: pointer;
@@ -239,7 +240,7 @@
   gap: .78rem;
   padding: 1.05rem;
   border: 1px solid rgba(255, 255, 255, .11);
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   background: linear-gradient(145deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .022));
 }
 
@@ -398,7 +399,7 @@ body.light-theme .use-custom:focus-visible {
   }
 
   .shop-hero h1 {
-    font-size: clamp(3.7rem, 18vw, 5.8rem);
+    font-size: clamp(3.3rem, 15vw, 5rem);
   }
 }
 
