@@ -1,0 +1,67 @@
+const loader = document.querySelector('.loader');
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const themeToggle = document.querySelector('.theme-toggle');
+const countdown = document.querySelector('[data-countdown]');
+
+window.addEventListener('load', () => {
+  window.setTimeout(() => loader.classList.add('done'), reduced ? 0 : 850);
+});
+
+const storedTheme = window.localStorage.getItem('rebound-theme');
+
+function setTheme(theme) {
+  const light = theme === 'light';
+  document.body.classList.toggle('light-theme', light);
+  themeToggle.setAttribute('aria-pressed', String(light));
+  themeToggle.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+  themeToggle.querySelector('span').textContent = light ? 'Dark' : 'Light';
+  window.localStorage.setItem('rebound-theme', theme);
+}
+
+setTheme(storedTheme === 'light' ? 'light' : 'dark');
+themeToggle.addEventListener('click', () => setTheme(document.body.classList.contains('light-theme') ? 'dark' : 'light'));
+
+function updateCountdown() {
+  if (!countdown) return;
+  const target = new Date(countdown.dataset.countdown).getTime();
+  const remaining = Math.max(0, target - Date.now());
+  const days = Math.floor(remaining / 86400000);
+  const hours = Math.floor((remaining % 86400000) / 3600000);
+  const minutes = Math.floor((remaining % 3600000) / 60000);
+  const seconds = Math.floor((remaining % 60000) / 1000);
+  const pad = value => String(value).padStart(2, '0');
+  countdown.querySelector('[data-days]').textContent = pad(days);
+  countdown.querySelector('[data-hours]').textContent = pad(hours);
+  countdown.querySelector('[data-minutes]').textContent = pad(minutes);
+  countdown.querySelector('[data-seconds]').textContent = pad(seconds);
+}
+updateCountdown();
+window.setInterval(updateCountdown, 1000);
+
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.mobile-menu');
+function setMenu(open) {
+  toggle.setAttribute('aria-expanded', String(open));
+  toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  menu.setAttribute('aria-hidden', String(!open));
+  menu.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+}
+toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+}, { threshold: .13 });
+document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+
+const form = document.querySelector('.signup-form');
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  const input = form.querySelector('input');
+  const status = form.querySelector('.form-status');
+  if (!input.checkValidity()) { status.textContent = 'Please enter a valid email address.'; input.focus(); return; }
+  status.textContent = 'You’re on the list. Welcome to REBOUND.';
+  form.reset();
+});
