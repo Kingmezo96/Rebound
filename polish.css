@@ -497,7 +497,7 @@ footer {
   z-index: 1;
   width: min(24rem, 74vw);
   margin: 0;
-  aspect-ratio: 760 / 1055;
+  aspect-ratio: 2 / 3;
   perspective: 1200px;
 }
 
