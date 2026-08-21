@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="REBOUND Podcast — coming soon. Watch this space.">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>REBOUND Podcast — Coming Soon</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090909'/%3E%3Ctext x='8' y='49' font-family='Arial Black' font-size='45' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="polish.css">
+  <link rel="stylesheet" href="podcast.css">
+</head>
+<body class="podcast-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="magic-cursor" aria-hidden="true"><div id="cursor"></div></div>
+  <div class="loader preloader" aria-hidden="true">
+    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+      <path id="loader-wave" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+    </svg>
+    <div class="loader-container">
+      <div class="loaded">
+        <span>P</span><span>O</span><span>D</span><span>C</span><span>A</span><span>S</span><span>T</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="Rebound home">R<span>°</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html#book">The book</a><a href="index.html#showcase">Cover</a><a href="index.html#author">Author</a><a class="active" href="podcast.html">Podcast</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><span>Light</span></button>
+    <a class="header-cta" href="index.html#contact">Contact <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation"><a href="index.html#book">The book</a><a href="index.html#showcase">Cover</a><a href="index.html#author">Author</a><a href="index.html#contact">Contact</a><a href="podcast.html">Podcast</a></nav>
+    <p>REBOUND audio is loading.</p>
+  </div>
+
+  <main id="main">
+    <section class="podcast-hero" aria-labelledby="podcast-title">
+      <div class="podcast-banner" aria-hidden="true"><img src="assets/rebound-podcast-banner.png" alt=""></div>
+      <div class="podcast-shade" aria-hidden="true"></div>
+      <div class="podcast-content reveal">
+        <p class="podcast-kicker">REBOUND Podcast</p>
+        <h1 id="podcast-title">Coming soon.</h1>
+        <p class="podcast-subtitle">Watch this space.</p>
+        <div class="soundscape" aria-label="Animated sound wave">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <a class="pill primary" href="index.html#contact">Get notified <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="frequency-orbit" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer><a class="footer-brand" href="index.html#home">REBOUND</a><p>© 2026 Rebound Project</p><div><a href="index.html">Home ↑</a><a href="mailto:email.reboundbysol@gmail.com">Contact</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

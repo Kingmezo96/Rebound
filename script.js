@@ -92,21 +92,23 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 
 const form = document.querySelector('.signup-form');
-form.addEventListener('submit', event => {
-  event.preventDefault();
-  const name = form.querySelector('#name');
-  const phone = form.querySelector('#phone');
-  const message = form.querySelector('#message');
-  const status = form.querySelector('.form-status');
-  const firstInvalid = [name, phone, message].find(field => !field.checkValidity());
-  if (firstInvalid) {
-    status.textContent = 'Please complete your name, phone number, and short message.';
-    firstInvalid.focus();
-    return;
-  }
-  const subject = encodeURIComponent('Rebound inquiry');
-  const body = encodeURIComponent(`Name: ${name.value}\nPhone: ${phone.value}\n\nMessage:\n${message.value}`);
-  status.textContent = 'Opening your email app...';
-  window.location.href = `mailto:email.reboundbysol@gmail.com?subject=${subject}&body=${body}`;
-  form.reset();
-});
+if (form) {
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const name = form.querySelector('#name');
+    const phone = form.querySelector('#phone');
+    const message = form.querySelector('#message');
+    const status = form.querySelector('.form-status');
+    const firstInvalid = [name, phone, message].find(field => !field.checkValidity());
+    if (firstInvalid) {
+      status.textContent = 'Please complete your name, phone number, and short message.';
+      firstInvalid.focus();
+      return;
+    }
+    const subject = encodeURIComponent('Rebound inquiry');
+    const body = encodeURIComponent(`Name: ${name.value}\nPhone: ${phone.value}\n\nMessage:\n${message.value}`);
+    status.textContent = 'Opening your email app...';
+    window.location.href = `mailto:email.reboundbysol@gmail.com?subject=${subject}&body=${body}`;
+    form.reset();
+  });
+}
