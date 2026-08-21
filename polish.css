@@ -733,3 +733,157 @@ body.light-theme .event-card {
     animation: none;
   }
 }
+
+/* Final Rebound art direction pass. */
+.hero-title-block {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: clamp(.55rem, 1vw, .9rem);
+  text-align: center;
+}
+
+.wordmark {
+  margin: 0;
+  font-size: clamp(4.9rem, 16vw, 18rem);
+  line-height: .82;
+  transform: none !important;
+  transform-origin: center;
+  letter-spacing: 0;
+}
+
+.hero-tagline {
+  margin: 0;
+  color: rgba(255, 255, 255, .78);
+  font: 700 clamp(.72rem, 1.05vw, .95rem)/1.1 var(--display);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  animation: titleRise .9s var(--brilio-ease) both .48s;
+}
+
+@keyframes titleRise {
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.display {
+  font-size: clamp(3.1rem, 7.2vw, 7.6rem);
+}
+
+.body-copy p {
+  font-size: clamp(.95rem, 1.12vw, 1.12rem);
+  line-height: 1.55;
+}
+
+.body-copy .lead {
+  font-size: clamp(1.12rem, 1.65vw, 1.65rem);
+  line-height: 1.26;
+}
+
+.statement p {
+  font-size: clamp(2.1rem, 5vw, 5.5rem);
+}
+
+.showcase-copy h2 {
+  font-size: clamp(2.2rem, 4.6vw, 5.4rem);
+  line-height: .9;
+}
+
+.showcase-copy > p:not(.small-label) {
+  max-width: 28rem;
+  font-size: clamp(.95rem, 1.2vw, 1.08rem);
+  line-height: 1.55;
+}
+
+.excerpt blockquote {
+  font-size: clamp(2rem, 4.4vw, 4.8rem);
+}
+
+.author-copy > p {
+  font-size: clamp(.95rem, 1.1vw, 1.05rem);
+  line-height: 1.6;
+}
+
+.event-card a,
+.direct-email {
+  font-variant-caps: all-small-caps;
+  text-transform: lowercase;
+  letter-spacing: .08em;
+}
+
+.direct-email {
+  font-weight: 700;
+  font-size: .7rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  margin-top: .35rem;
+}
+
+.contact-form .input-row {
+  margin-top: 0;
+}
+
+.input-row textarea {
+  width: 100%;
+  min-height: 8rem;
+  border: 0;
+  background: transparent;
+  padding: 1rem 0;
+  color: inherit;
+  font: inherit;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+}
+
+.send-email {
+  justify-self: start;
+  margin-top: .75rem;
+  border: 1px solid #0a0a0a;
+  border-radius: 999px;
+  background: #0a0a0a;
+  color: #fff;
+  padding: .95rem 1.25rem;
+  cursor: pointer;
+  font: 700 .72rem var(--display);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  transition: transform .35s var(--brilio-ease), background .35s var(--brilio-ease), color .35s var(--brilio-ease);
+}
+
+.send-email:hover,
+.send-email:focus-visible {
+  transform: translateY(-2px);
+  background: transparent;
+  color: #0a0a0a;
+}
+
+body.light-theme .send-email:hover,
+body.light-theme .send-email:focus-visible {
+  color: #0a0a0a;
+}
+
+@media (max-width: 760px) {
+  .wordmark {
+    font-size: clamp(3.8rem, 17vw, 5.6rem);
+  }
+
+  .hero-tagline {
+    font-size: .58rem;
+    letter-spacing: .12em;
+  }
+}

@@ -48,7 +48,7 @@ if (cursor && !reduced) {
   });
 }
 
-document.querySelectorAll('.circle-link, .pill, .text-link, .event-card a, .direct-email').forEach(element => {
+document.querySelectorAll('.circle-link, .pill, .text-link, .event-card a, .direct-email, .send-email').forEach(element => {
   element.addEventListener('pointermove', event => {
     const rect = element.getBoundingClientRect();
     element.style.setProperty('--magnet-x', `${event.clientX - rect.left}px`);
@@ -94,9 +94,19 @@ document.querySelectorAll('.reveal').forEach(element => observer.observe(element
 const form = document.querySelector('.signup-form');
 form.addEventListener('submit', event => {
   event.preventDefault();
-  const input = form.querySelector('input');
+  const name = form.querySelector('#name');
+  const phone = form.querySelector('#phone');
+  const message = form.querySelector('#message');
   const status = form.querySelector('.form-status');
-  if (!input.checkValidity()) { status.textContent = 'Please enter a valid email address.'; input.focus(); return; }
-  status.textContent = 'You’re on the list. Welcome to REBOUND.';
+  const firstInvalid = [name, phone, message].find(field => !field.checkValidity());
+  if (firstInvalid) {
+    status.textContent = 'Please complete your name, phone number, and short message.';
+    firstInvalid.focus();
+    return;
+  }
+  const subject = encodeURIComponent('Rebound inquiry');
+  const body = encodeURIComponent(`Name: ${name.value}\nPhone: ${phone.value}\n\nMessage:\n${message.value}`);
+  status.textContent = 'Opening your email app...';
+  window.location.href = `mailto:email.reboundbysol@gmail.com?subject=${subject}&body=${body}`;
   form.reset();
 });
