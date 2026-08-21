@@ -114,14 +114,46 @@
       </div>
     </section>
 
-    <section class="excerpt section-pad" aria-labelledby="excerpt-title">
-      <div class="eyebrow reveal"><span>03</span><span>From the page</span></div>
-      <div class="excerpt-grid">
-        <p class="folio reveal">/ 084</p>
-        <blockquote id="excerpt-title" class="reveal">“Healing was never the same thing as forgetting. It was remembering without surrendering the rest of the day.”</blockquote>
-        <p class="annotation reveal">An excerpt from<br><strong>THE QUIET</strong></p>
+    <section class="excerpt excerpt-library section-pad" aria-labelledby="excerpt-title">
+      <div class="excerpt-library-grid">
+        <div class="excerpt-heading reveal">
+          <p class="small-label">from the book</p>
+          <h2 id="excerpt-title">Excerpts<br>from Rebound</h2>
+        </div>
+        <div class="excerpt-list reveal" role="list">
+          <button class="excerpt-item" type="button" data-excerpt="grief" role="listitem">
+            <span class="excerpt-index">01</span>
+            <span><strong>Grief</strong><small>Rebound from grief</small></span>
+            <b aria-hidden="true">↗</b>
+          </button>
+          <button class="excerpt-item" type="button" data-excerpt="spirit" role="listitem">
+            <span class="excerpt-index">02</span>
+            <span><strong>Spirit</strong><small>Reconnecting with the higher source</small></span>
+            <b aria-hidden="true">↗</b>
+          </button>
+          <button class="excerpt-item" type="button" data-excerpt="courage" role="listitem">
+            <span class="excerpt-index">03</span>
+            <span><strong>Courage</strong><small>The decision to rise again</small></span>
+            <b aria-hidden="true">↗</b>
+          </button>
+          <button class="excerpt-item" type="button" data-excerpt="purpose" role="listitem">
+            <span class="excerpt-index">04</span>
+            <span><strong>Purpose</strong><small>Turning pressure into direction</small></span>
+            <b aria-hidden="true">↗</b>
+          </button>
+        </div>
       </div>
     </section>
+
+    <div class="excerpt-modal" aria-hidden="true">
+      <div class="excerpt-modal-backdrop" data-excerpt-close></div>
+      <article class="excerpt-dialog" role="dialog" aria-modal="true" aria-labelledby="excerpt-modal-title" tabindex="-1">
+        <button class="excerpt-close" type="button" data-excerpt-close aria-label="Close excerpt">×</button>
+        <p class="small-label" data-excerpt-kicker>excerpt</p>
+        <h2 id="excerpt-modal-title" data-excerpt-title>Excerpt title</h2>
+        <div class="excerpt-modal-copy" data-excerpt-copy></div>
+      </article>
+    </div>
 
     <section class="author section-pad" id="author" aria-labelledby="author-title">
       <figure class="author-art author-portrait reveal">

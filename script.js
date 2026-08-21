@@ -91,6 +91,86 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: .13 });
 document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 
+const excerptModal = document.querySelector('.excerpt-modal');
+const excerptDialog = document.querySelector('.excerpt-dialog');
+const excerptTitle = document.querySelector('[data-excerpt-title]');
+const excerptKicker = document.querySelector('[data-excerpt-kicker]');
+const excerptCopy = document.querySelector('[data-excerpt-copy]');
+let lastExcerptTrigger = null;
+
+const excerpts = {
+  grief: {
+    kicker: '01 / grief',
+    title: 'Rebound from grief.',
+    paragraphs: [
+      'The sharpest edge of grief is forged from the memories that linger, the words left unsaid, the time never spent enough, and the emotions never expressed adequately. You wish you thanked more. You wish you laughed more with them. The unoffered apologies, the unexpressed gratitude, the laughter that was cut short — you carry a heavy ledger of moments that will now sadly remain eternally unfinished.',
+      'Life moves on. Traffic continues. Bills arrive. The demands of work force you to compartmentalize the grief in safe recesses somewhere deep within you. Birthdays arrive, weddings arrive, and while grieving, you still find yourself happy for the new blessings in your family. People laugh; and somehow you find a way to as well, but you never quite forget.',
+      'Moving forward can feel unsettling. The initial stages of healing bring an unexpected wave of guilt. You feel as though letting go of the pain means letting go of the memory, or letting go of the people — that smiling again is a betrayal of what you lost. It makes the heart heavy, and sometimes the tears gently flow down the face again even when you try to fight them back.',
+      'Rebounding from deep grief is not about forgetting or getting over it. You do not shrink the loss; instead, you build a larger life around it. You embrace your dreams harder, pursue life with greater drive, and bravely, intentionally move. You carry the weight of the memories until your shoulders gracefully grow strong enough to bear without breaking, transforming that pain into strength, purpose, and grace.'
+    ]
+  },
+  spirit: {
+    kicker: '02 / spirit',
+    title: 'The spiritual rebound.',
+    paragraphs: [
+      'A complete, high-end rebound cannot exist solely on the material or physical planes. You can possess a pristine bank account and an athletic body, yet remain utterly hollow if your spirit is fractured and detached from a higher source.',
+      'Severe trauma strips away the surface level of human existence. It exposes the terrifying truth that human effort alone, no matter how disciplined or intelligent, is insufficient to navigate the deepest valleys of the human experience.',
+      'When every human pillar breaks — when partners abandon you, money evaporates, and your own mind betrays you — you are forced to look upward. You realize that your pain was not merely a random, chaotic tragedy; it was a violent, spiritual dismantling designed to wake you up from a shallow existence.',
+      'Reconnecting with your spiritual core requires stepping into intentional devotion, prayerfulness, and quiet surrender. Faith is not the absence of doubt or the denial of suffering. Faith is the radical, unyielding choice to believe that there is a divine order, a higher intelligence, and an ultimate purpose working through your life, even when you are standing in the middle of a burning room.'
+    ]
+  },
+  courage: {
+    kicker: '03 / courage',
+    title: 'The decision to rise.',
+    paragraphs: [
+      'Courage is rarely loud at the beginning. Sometimes it is the quiet decision to get out of bed, answer the call, open the curtain, and participate in life again even while your heart is still negotiating with pain.',
+      'The rebound begins when you stop waiting to feel completely ready. You move with trembling hands. You rebuild with imperfect strength. You take one disciplined step, then another, until motion becomes evidence that your life is not finished.'
+    ]
+  },
+  purpose: {
+    kicker: '04 / purpose',
+    title: 'Pressure into purpose.',
+    paragraphs: [
+      'Pressure can either scatter a person or refine them. The difference is direction. When pain is given no meaning, it becomes a weight; when it is placed inside purpose, it becomes fuel.',
+      'Rebound is the work of gathering what remains, naming what matters, and choosing to live with a sharper devotion to the future. You do not deny the wound. You let it teach you where strength must now grow.'
+    ]
+  }
+};
+
+function setExcerptModal(open) {
+  if (!excerptModal) return;
+  excerptModal.classList.toggle('open', open);
+  excerptModal.setAttribute('aria-hidden', String(!open));
+  document.body.classList.toggle('menu-open', open);
+  if (open) {
+    excerptDialog.focus();
+  } else if (lastExcerptTrigger) {
+    lastExcerptTrigger.focus();
+  }
+}
+
+document.querySelectorAll('[data-excerpt]').forEach(button => {
+  button.addEventListener('click', () => {
+    const excerpt = excerpts[button.dataset.excerpt];
+    if (!excerpt || !excerptModal) return;
+    lastExcerptTrigger = button;
+    excerptKicker.textContent = excerpt.kicker;
+    excerptTitle.textContent = excerpt.title;
+    excerptCopy.innerHTML = excerpt.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('');
+    setExcerptModal(true);
+  });
+});
+
+document.querySelectorAll('[data-excerpt-close]').forEach(element => {
+  element.addEventListener('click', () => setExcerptModal(false));
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && excerptModal?.classList.contains('open')) {
+    setExcerptModal(false);
+  }
+});
+
 const form = document.querySelector('.signup-form');
 if (form) {
   form.addEventListener('submit', async event => {
