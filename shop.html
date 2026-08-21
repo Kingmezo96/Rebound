@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pre-order REBOUND by Onu Sol Adah.">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>REBOUND Shop — Pre-order the Book</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090909'/%3E%3Ctext x='8' y='49' font-family='Arial Black' font-size='45' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="polish.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body class="shop-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="magic-cursor" aria-hidden="true"><div id="cursor"></div></div>
+  <div class="loader preloader" aria-hidden="true">
+    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+      <path id="loader-wave" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+    </svg>
+    <div class="loader-container">
+      <div class="loaded">
+        <span>R</span><span>E</span><span>B</span><span>O</span><span>U</span><span>N</span><span>D</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="Rebound home">R<span>°</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html#book">The book</a><a href="index.html#showcase">Cover</a><a href="index.html#author">Author</a><a class="active" href="shop.html">Shop</a><a href="podcast.html">Podcast</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><span>Light</span></button>
+    <a class="header-cta" href="#preorder">Pre-order <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation"><a href="index.html#book">The book</a><a href="index.html#showcase">Cover</a><a href="index.html#author">Author</a><a href="shop.html">Shop</a><a href="podcast.html">Podcast</a></nav>
+    <p>Secure your REBOUND copy.</p>
+  </div>
+
+  <main id="main">
+    <section class="shop-hero" aria-labelledby="shop-title">
+      <div class="shop-backdrop" aria-hidden="true"><img src="assets/rebound-hero-ai-16k.webp" alt=""></div>
+      <div class="shop-shade" aria-hidden="true"></div>
+      <div class="shop-hero-content reveal">
+        <p class="shop-kicker">REBOUND Shop</p>
+        <h1 id="shop-title">PRE-ORDER<br>BOOK.</h1>
+        <p>Choose your preorder tier and reserve your copy of REBOUND.</p>
+        <a class="pill primary" href="#preorder">Start pre-order <span aria-hidden="true">↘</span></a>
+      </div>
+      <figure class="shop-cover reveal" aria-label="Rebound book cover">
+        <img src="assets/rebound-cover-sharp.webp" alt="REBOUND book cover mockup.">
+      </figure>
+    </section>
+
+    <section class="preorder section-pad" id="preorder" aria-labelledby="preorder-title">
+      <div class="eyebrow light reveal"><span>01</span><span>Pre-order</span></div>
+      <div class="preorder-grid">
+        <div class="preorder-copy reveal">
+          <p class="small-label">Secure the book</p>
+          <h2 id="preorder-title">CHOOSE YOUR<br>REBOUND ACCESS.</h2>
+          <p>Select a tier, enter your details, and continue securely through Paystack.</p>
+          <div class="selected-ticket" aria-live="polite">
+            <span>Selected</span>
+            <strong data-selected-label>Regular</strong>
+            <b data-selected-amount>₦20,000</b>
+          </div>
+        </div>
+
+        <form class="preorder-form reveal" data-paystack-form novalidate>
+          <div class="tier-grid" role="radiogroup" aria-label="Pre-order tiers">
+            <button class="tier-card" type="button" data-tier="vip" data-amount="1000000" aria-pressed="false">
+              <span>VIP</span>
+              <strong>₦1,000,000</strong>
+              <small>Premium pre-order access</small>
+            </button>
+            <button class="tier-card" type="button" data-tier="standard" data-amount="500000" aria-pressed="false">
+              <span>Standard</span>
+              <strong>₦500,000</strong>
+              <small>Signature pre-order tier</small>
+            </button>
+            <button class="tier-card active" type="button" data-tier="regular" data-amount="20000" aria-pressed="true">
+              <span>Regular</span>
+              <strong>₦20,000</strong>
+              <small>Reserve your copy</small>
+            </button>
+          </div>
+
+          <div class="custom-amount">
+            <label for="custom-amount">Other amount</label>
+            <div class="amount-input"><span>₦</span><input id="custom-amount" name="customAmount" type="number" min="20000" step="1000" inputmode="numeric" placeholder="Enter amount"></div>
+            <button class="use-custom" type="button">Use custom amount</button>
+          </div>
+
+          <div class="buyer-grid">
+            <label for="buyer-name">Name</label>
+            <div class="input-row"><input id="buyer-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+            <label for="buyer-email">Email address</label>
+            <div class="input-row"><input id="buyer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+            <label for="buyer-phone">Phone number</label>
+            <div class="input-row"><input id="buyer-phone" name="phone" type="tel" autocomplete="tel" placeholder="+234..." required></div>
+          </div>
+
+          <button class="checkout-button" type="submit">Continue to Paystack <span aria-hidden="true">↗</span></button>
+          <p class="pay-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="footer-brand" href="index.html#home">REBOUND</a><p>© 2026 Rebound Project</p><div><a href="index.html">Home ↑</a><a href="mailto:email.reboundbysol@gmail.com">Contact</a></div></footer>
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+  <script src="script.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>

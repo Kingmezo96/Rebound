@@ -48,7 +48,7 @@ if (cursor && !reduced) {
   });
 }
 
-document.querySelectorAll('.circle-link, .pill, .text-link, .event-card a, .direct-email, .send-email').forEach(element => {
+document.querySelectorAll('.circle-link, .pill, .text-link, .event-card a, .direct-email, .send-email, .tier-card, .use-custom, .checkout-button').forEach(element => {
   element.addEventListener('pointermove', event => {
     const rect = element.getBoundingClientRect();
     element.style.setProperty('--magnet-x', `${event.clientX - rect.left}px`);
