@@ -903,7 +903,7 @@ body.light-theme .send-email:focus-visible {
 
 .hero-tagline {
   width: 0;
-  max-width: 24ch;
+  max-width: 30ch;
   overflow: hidden;
   white-space: nowrap;
   color: rgba(255, 255, 255, .94);
@@ -911,7 +911,7 @@ body.light-theme .send-email:focus-visible {
   font-size: clamp(.92rem, 1.32vw, 1.18rem);
   letter-spacing: .13em;
   text-shadow: 0 .8rem 2rem rgba(0, 0, 0, .75);
-  animation: taglineType 6.8s steps(24, end) infinite, caretBlink .8s step-end infinite;
+  animation: taglineType 7.2s steps(29, end) infinite, caretBlink .8s step-end infinite;
 }
 
 @keyframes taglineType {
@@ -921,7 +921,7 @@ body.light-theme .send-email:focus-visible {
   }
   42%,
   68% {
-    width: 24ch;
+    width: 30ch;
   }
   92%,
   100% {
