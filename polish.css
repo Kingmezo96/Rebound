@@ -832,6 +832,15 @@ body.light-theme .event-card {
   margin-top: .35rem;
 }
 
+.form-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .contact-form .input-row {
   margin-top: 0;
 }
@@ -872,9 +881,32 @@ body.light-theme .event-card {
   color: #0a0a0a;
 }
 
+.send-email:disabled {
+  cursor: wait;
+  opacity: .58;
+  transform: none;
+}
+
 body.light-theme .send-email:hover,
 body.light-theme .send-email:focus-visible {
   color: #0a0a0a;
+}
+
+.form-fineprint {
+  margin: .15rem 0 -.35rem;
+  color: inherit;
+  font-size: .74rem;
+  line-height: 1.45;
+  opacity: .64;
+}
+
+.form-status {
+  min-height: 1.4em;
+  margin: .2rem 0 0;
+  font-size: .82rem;
+  line-height: 1.45;
+  color: inherit;
+  opacity: .82;
 }
 
 @media (max-width: 760px) {

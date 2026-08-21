@@ -93,22 +93,42 @@ document.querySelectorAll('.reveal').forEach(element => observer.observe(element
 
 const form = document.querySelector('.signup-form');
 if (form) {
-  form.addEventListener('submit', event => {
+  form.addEventListener('submit', async event => {
     event.preventDefault();
     const name = form.querySelector('#name');
+    const email = form.querySelector('#email');
     const phone = form.querySelector('#phone');
     const message = form.querySelector('#message');
     const status = form.querySelector('.form-status');
-    const firstInvalid = [name, phone, message].find(field => !field.checkValidity());
+    const submitButton = form.querySelector('button[type="submit"]');
+    const firstInvalid = [name, email, phone, message].find(field => !field.checkValidity());
     if (firstInvalid) {
-      status.textContent = 'Please complete your name, phone number, and short message.';
+      status.textContent = 'Please complete your name, email address, phone number, and short message.';
       firstInvalid.focus();
       return;
     }
-    const subject = encodeURIComponent('Rebound inquiry');
-    const body = encodeURIComponent(`Name: ${name.value}\nPhone: ${phone.value}\n\nMessage:\n${message.value}`);
-    status.textContent = 'Opening your email app...';
-    window.location.href = `mailto:email.reboundbysol@gmail.com?subject=${subject}&body=${body}`;
-    form.reset();
+
+    submitButton.disabled = true;
+    status.textContent = 'Sending your message...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (!response.ok) throw new Error('Form delivery failed');
+
+      status.textContent = 'Message sent. Thank you — the Rebound team will reply soon.';
+      form.reset();
+    } catch (error) {
+      const subject = encodeURIComponent('Rebound inquiry');
+      const body = encodeURIComponent(`Name: ${name.value}\nEmail: ${email.value}\nPhone: ${phone.value}\n\nMessage:\n${message.value}`);
+      status.textContent = 'Direct send needs activation, opening your email app instead.';
+      window.location.href = `mailto:email.reboundbysol@gmail.com?subject=${subject}&body=${body}`;
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 }
