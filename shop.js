@@ -1,4 +1,4 @@
-const PAYSTACK_PUBLIC_KEY = 'PASTE_YOUR_PAYSTACK_PUBLIC_KEY_HERE';
+const PAYSTACK_PUBLIC_KEY = 'pk_live_507f26f5d2f6fdac6ecaf88d92ca408e9753cd63';
 const MIN_PREORDER_AMOUNT = 20000;
 
 const naira = new Intl.NumberFormat('en-NG', {
