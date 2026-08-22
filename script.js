@@ -99,8 +99,18 @@ const excerptCopy = document.querySelector('[data-excerpt-copy]');
 let lastExcerptTrigger = null;
 
 const excerpts = {
+  stark: {
+    kicker: '01 / stark reality',
+    title: 'Courage in the face of adversity.',
+    paragraphs: [
+      'In the cold, windy hours of an unforgettable night in August — shaky hands and trembling feet — he stood outside the building where he had just lost his employment, cut off from work in a faraway land distant from home.',
+      'The cold winds whistled over his face. Frozen in thought, trying to keep it together, too many thoughts surged like a flood of hailstorm through his mind, too many thoughts trying to drown him within. But like a duck on a pond — motionless, yet beneath the murky waters, feet racing miles to stay afloat — he worked his mind quickly for solutions.',
+      'He thought of the final eviction notice served him a couple of weeks earlier, now due today. He thought of his two beautiful kids at home with the babysitter. He knew that he could not let them down; they depended wholly on him. The stark reality of the moment grew ever stronger. It felt like a bolstering storm with no harbor in sight.',
+      'This is the courage to seek a rebound out of the most impossible real-life situations: strength, resilience, and an utter resolve to defy the most compelling odds.'
+    ]
+  },
   grief: {
-    kicker: '01 / grief',
+    kicker: '02 / grief',
     title: 'Rebound from grief.',
     paragraphs: [
       'The sharpest edge of grief is forged from the memories that linger, the words left unsaid, the time never spent enough, and the emotions never expressed adequately. You wish you thanked more. You wish you laughed more with them. The unoffered apologies, the unexpressed gratitude, the laughter that was cut short — you carry a heavy ledger of moments that will now sadly remain eternally unfinished.',
@@ -109,30 +119,25 @@ const excerpts = {
       'Rebounding from deep grief is not about forgetting or getting over it. You do not shrink the loss; instead, you build a larger life around it. You embrace your dreams harder, pursue life with greater drive, and bravely, intentionally move. You carry the weight of the memories until your shoulders gracefully grow strong enough to bear without breaking, transforming that pain into strength, purpose, and grace.'
     ]
   },
+  purpose: {
+    kicker: '03 / purpose',
+    title: 'Rebounding into purpose.',
+    paragraphs: [
+      'There is a Japanese art known as Kintsugi — the practice of repairing broken pottery with liquid gold. The master craftsman does not hide the fractures; rather, the cracks are illuminated, emphasized, and celebrated. The vessel becomes infinitely stronger, more valuable, and more beautiful precisely because it was broken.',
+      'The brokenness birthed purpose. This is the ultimate destination of the rebound.',
+      'The transformation of scars: you are no longer the naive, unbroken person who walked blindly into the storm. You carry scars — visible to your soul, etched into your history. But those scars are no longer marks of shame; they are your credentials, an intrinsic part of your core, your essence.',
+      'They are proof that you walked through the fire and refused to burn to ash.'
+    ]
+  },
   spirit: {
-    kicker: '02 / spirit',
+    kicker: '04 / spiritual rebound',
     title: 'The spiritual rebound.',
     paragraphs: [
       'A complete, high-end rebound cannot exist solely on the material or physical planes. You can possess a pristine bank account and an athletic body, yet remain utterly hollow if your spirit is fractured and detached from a higher source.',
-      'Severe trauma strips away the surface level of human existence. It exposes the terrifying truth that human effort alone, no matter how disciplined or intelligent, is insufficient to navigate the deepest valleys of the human experience.',
-      'When every human pillar breaks — when partners abandon you, money evaporates, and your own mind betrays you — you are forced to look upward. You realize that your pain was not merely a random, chaotic tragedy; it was a violent, spiritual dismantling designed to wake you up from a shallow existence.',
-      'Reconnecting with your spiritual core requires stepping into intentional devotion, prayerfulness, and quiet surrender. Faith is not the absence of doubt or the denial of suffering. Faith is the radical, unyielding choice to believe that there is a divine order, a higher intelligence, and an ultimate purpose working through your life, even when you are standing in the middle of a burning room.'
-    ]
-  },
-  courage: {
-    kicker: '03 / courage',
-    title: 'The decision to rise.',
-    paragraphs: [
-      'Courage is rarely loud at the beginning. Sometimes it is the quiet decision to get out of bed, answer the call, open the curtain, and participate in life again even while your heart is still negotiating with pain.',
-      'The rebound begins when you stop waiting to feel completely ready. You move with trembling hands. You rebuild with imperfect strength. You take one disciplined step, then another, until motion becomes evidence that your life is not finished.'
-    ]
-  },
-  purpose: {
-    kicker: '04 / purpose',
-    title: 'Pressure into purpose.',
-    paragraphs: [
-      'Pressure can either scatter a person or refine them. The difference is direction. When pain is given no meaning, it becomes a weight; when it is placed inside purpose, it becomes fuel.',
-      'Rebound is the work of gathering what remains, naming what matters, and choosing to live with a sharper devotion to the future. You do not deny the wound. You let it teach you where strength must now grow.'
+      'Severe trauma strips away the surface level of human existence. It exposes the terrifying truth that human effort alone, no matter how disciplined or intelligent, is insufficient to navigate the deepest valleys of the human experience. When every human pillar breaks — when partners abandon you, money evaporates, and your own mind betrays you — you are forced to look upward.',
+      'You realize that your pain was not merely a random, chaotic tragedy; it was a violent, spiritual dismantling designed to wake you up from a shallow existence.',
+      'Reconnecting with your spiritual core requires stepping into a state of intentional devotion, prayerfulness, and quiet surrender.',
+      'Faith is not the absence of doubt or the denial of suffering. Faith is the radical, unyielding choice to believe that there is a divine order, a higher intelligence, and an ultimate purpose working through your life, even when you are standing in the middle of a burning room.'
     ]
   }
 };
