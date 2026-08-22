@@ -1553,6 +1553,42 @@ body.light-theme .excerpt-item small {
   text-transform: none;
 }
 
+.author-lead {
+  color: rgba(255, 255, 255, .82) !important;
+  font-size: clamp(1rem, 1.35vw, 1.28rem) !important;
+  line-height: 1.55 !important;
+}
+
+.author-bio {
+  display: grid;
+  gap: .85rem;
+  max-width: 43rem;
+}
+
+.author-bio p {
+  margin: 0;
+  color: rgba(255, 255, 255, .62);
+  font-size: clamp(.88rem, 1vw, .98rem);
+  line-height: 1.68;
+}
+
+.author-bio strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+body.light-theme .author-lead {
+  color: rgba(255, 255, 255, .82) !important;
+}
+
+body.light-theme .author-bio p {
+  color: rgba(255, 255, 255, .62);
+}
+
+body.light-theme .author-bio strong {
+  color: #fff;
+}
+
 .manifesto-grid,
 .showcase-grid,
 .excerpt-grid {
