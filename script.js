@@ -100,13 +100,14 @@ let lastExcerptTrigger = null;
 
 const excerpts = {
   stark: {
-    kicker: '01 / stark reality',
-    title: 'Courage in the face of adversity.',
+    kicker: 'chapter 1 / courage',
+    title: 'Stark Reality!',
     paragraphs: [
+      'Courage in the face of adversity.',
       'In the cold, windy hours of an unforgettable night in August — shaky hands and trembling feet — he stood outside the building where he had just lost his employment, cut off from work in a faraway land distant from home.',
       'The cold winds whistled over his face. Frozen in thought, trying to keep it together, too many thoughts surged like a flood of hailstorm through his mind, too many thoughts trying to drown him within. But like a duck on a pond — motionless, yet beneath the murky waters, feet racing miles to stay afloat — he worked his mind quickly for solutions.',
       'He thought of the final eviction notice served him a couple of weeks earlier, now due today. He thought of his two beautiful kids at home with the babysitter. He knew that he could not let them down; they depended wholly on him. The stark reality of the moment grew ever stronger. It felt like a bolstering storm with no harbor in sight.',
-      'This is the courage to seek a rebound out of the most impossible real-life situations: strength, resilience, and an utter resolve to defy the most compelling odds.'
+      'This is the courage to seek a rebound out of the most impossible real-life situations: strength, resilience, and an utter resolve and determination to defy the most compelling odds.'
     ]
   },
   grief: {
@@ -120,12 +121,12 @@ const excerpts = {
     ]
   },
   purpose: {
-    kicker: '03 / purpose',
-    title: 'Rebounding into purpose.',
+    kicker: 'chapter 11 / purpose',
+    title: 'Rebounding into Purpose.',
     paragraphs: [
       'There is a Japanese art known as Kintsugi — the practice of repairing broken pottery with liquid gold. The master craftsman does not hide the fractures; rather, the cracks are illuminated, emphasized, and celebrated. The vessel becomes infinitely stronger, more valuable, and more beautiful precisely because it was broken.',
-      'The brokenness birthed purpose. This is the ultimate destination of the rebound.',
-      'The transformation of scars: you are no longer the naive, unbroken person who walked blindly into the storm. You carry scars — visible to your soul, etched into your history. But those scars are no longer marks of shame; they are your credentials, an intrinsic part of your core, your essence.',
+      'The “brokenness” birthed purpose. This is the ultimate destination of the rebound.',
+      'The Transformation of Scars: you are no longer the naive, unbroken person who walked blindly into the storm. You carry scars — visible to your soul, etched into your history. But those scars are no longer marks of shame; they are your credentials, an intrinsic part of your core, your essence.',
       'They are proof that you walked through the fire and refused to burn to ash.'
     ]
   },
