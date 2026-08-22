@@ -1333,7 +1333,7 @@ body.light-theme .excerpt-item small {
 .small-label {
   font-weight: 700;
   letter-spacing: .16em;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .showcase-grid {
@@ -1396,7 +1396,7 @@ body.light-theme .excerpt-item small {
   color: rgba(7, 10, 18, .48);
   font: 700 .62rem/1 var(--mono);
   letter-spacing: .12em;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .date-line b {
@@ -1464,7 +1464,7 @@ body.light-theme .excerpt-item small {
 
 .home-pay-row input::placeholder {
   color: rgba(7, 10, 18, .42);
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .home-pay-row .checkout-button {
@@ -1539,14 +1539,6 @@ body.light-theme .excerpt-item small {
   object-position: 50% 24%;
   filter: grayscale(1) contrast(1.1) brightness(.96);
   transform: none;
-}
-
-.author-name {
-  margin: clamp(1.3rem, 2.5vw, 2.6rem) 0 0;
-  color: rgba(255, 255, 255, .58) !important;
-  font: 700 .68rem/1 var(--mono);
-  letter-spacing: .16em;
-  text-transform: lowercase;
 }
 
 .author-copy h2 {

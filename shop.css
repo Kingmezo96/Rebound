@@ -54,7 +54,7 @@
   color: rgba(255, 255, 255, .68);
   font: 800 .68rem/1 var(--display);
   letter-spacing: .18em;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .shop-hero h1 {
@@ -167,7 +167,7 @@
   color: rgba(7, 10, 18, .48);
   font: 760 .7rem/1 var(--display);
   letter-spacing: .04em;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .selected-ticket strong,

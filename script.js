@@ -100,7 +100,7 @@ let lastExcerptTrigger = null;
 
 const excerpts = {
   stark: {
-    kicker: 'chapter 1 / courage',
+    kicker: 'Chapter 1 / Courage',
     title: 'Stark Reality!',
     paragraphs: [
       'Courage in the face of adversity.',
@@ -111,7 +111,7 @@ const excerpts = {
     ]
   },
   grief: {
-    kicker: '02 / grief',
+    kicker: '02 / Grief',
     title: 'Rebound from grief.',
     paragraphs: [
       'The sharpest edge of grief is forged from the memories that linger, the words left unsaid, the time never spent enough, and the emotions never expressed adequately. You wish you thanked more. You wish you laughed more with them. The unoffered apologies, the unexpressed gratitude, the laughter that was cut short — you carry a heavy ledger of moments that will now sadly remain eternally unfinished.',
@@ -121,7 +121,7 @@ const excerpts = {
     ]
   },
   purpose: {
-    kicker: 'chapter 11 / purpose',
+    kicker: 'Chapter 11 / Purpose',
     title: 'Rebounding into Purpose.',
     paragraphs: [
       'There is a Japanese art known as Kintsugi — the practice of repairing broken pottery with liquid gold. The master craftsman does not hide the fractures; rather, the cracks are illuminated, emphasized, and celebrated. The vessel becomes infinitely stronger, more valuable, and more beautiful precisely because it was broken.',
@@ -131,7 +131,7 @@ const excerpts = {
     ]
   },
   spirit: {
-    kicker: '04 / spiritual rebound',
+    kicker: '04 / Spiritual Rebound',
     title: 'The spiritual rebound.',
     paragraphs: [
       'A complete, high-end rebound cannot exist solely on the material or physical planes. You can possess a pristine bank account and an athletic body, yet remain utterly hollow if your spirit is fractured and detached from a higher source.',

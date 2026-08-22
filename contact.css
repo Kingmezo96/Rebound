@@ -74,7 +74,7 @@
   color: rgba(255, 255, 255, .58);
   font: 800 .72rem/1 var(--display);
   letter-spacing: .16em;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .contact-hero h1 {
@@ -169,7 +169,7 @@
   color: rgba(255, 255, 255, .72);
   font: 800 .74rem var(--display);
   letter-spacing: .08em;
-  text-transform: lowercase;
+  text-transform: none;
   border-bottom: 1px solid rgba(255, 255, 255, .26);
 }
 
@@ -183,7 +183,7 @@
   color: rgba(7, 10, 18, .5);
   font-weight: 800;
   letter-spacing: .13em;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .contact-page-form .input-row,
