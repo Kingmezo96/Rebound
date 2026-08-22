@@ -1191,6 +1191,32 @@ body.light-theme .send-email:focus-visible {
   line-height: 1;
 }
 
+body.light-theme .excerpt-library {
+  background:
+    radial-gradient(circle at 30% 12%, rgba(0, 0, 0, .045), transparent 16rem),
+    linear-gradient(180deg, #f7f7f3, #ecece7);
+  color: #0a0a0a;
+}
+
+body.light-theme .excerpt-library:before {
+  border-color: rgba(82, 82, 78, .52);
+}
+
+body.light-theme .excerpt-heading h2,
+body.light-theme .excerpt-item strong,
+body.light-theme .excerpt-item b {
+  color: #0a0a0a;
+}
+
+body.light-theme .excerpt-item {
+  border-bottom-color: rgba(0, 0, 0, .28);
+}
+
+body.light-theme .excerpt-index,
+body.light-theme .excerpt-item small {
+  color: rgba(10, 10, 10, .56);
+}
+
 .themes-heading {
   margin: clamp(3rem, 4.5vw, 4.8rem) 0;
 }
@@ -1471,7 +1497,7 @@ body.light-theme .send-email:focus-visible {
 }
 
 body.light-theme .showcase-copy > p:not(.small-label) {
-  color: rgba(255, 255, 255, .6);
+  color: rgba(10, 10, 10, .62);
 }
 
 @media (max-width: 760px) {
