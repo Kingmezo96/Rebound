@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://reboundbysol.vercel.app/sitemap.xml
+Sitemap: https://reboundbysol.com/sitemap.xml
