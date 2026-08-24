@@ -24,7 +24,7 @@
 
 .author-page-hero {
   position: relative;
-  min-height: 88svh;
+  min-height: 82svh;
   display: grid;
   align-items: end;
   padding: 8rem var(--pad) clamp(3.5rem, 6vw, 6rem);
@@ -123,6 +123,47 @@
   border-color: #fff;
   background: #fff;
   color: #090909;
+}
+
+.author-image-section {
+  position: relative;
+  padding: 0 var(--pad) clamp(3.5rem, 7vw, 7rem);
+  background: #1b1b1d;
+  color: #f8f8f8;
+}
+
+.author-image-frame {
+  position: relative;
+  width: min(100%, 86rem);
+  margin: 0 auto;
+  padding: clamp(.65rem, 1.4vw, 1.1rem);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: clamp(2rem, 5vw, 5rem);
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .018)),
+    #111013;
+  box-shadow: 0 2.5rem 7rem rgba(0, 0, 0, .42);
+}
+
+.author-image-frame:before {
+  content: "";
+  position: absolute;
+  inset: clamp(1rem, 2vw, 1.7rem);
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: clamp(1.55rem, 4.2vw, 4rem);
+  pointer-events: none;
+}
+
+.author-image-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7.4;
+  object-fit: cover;
+  object-position: center 44%;
+  border-radius: clamp(1.35rem, 4vw, 3.8rem);
+  filter: contrast(1.08) brightness(.82) saturate(.86);
 }
 
 .author-page-grain {
@@ -415,7 +456,7 @@ body.light-theme.author-page {
 body.light-theme .author-page-hero,
 body.light-theme .author-experiences,
 body.light-theme .author-skills,
-body.light-theme .author-recognition {
+body.light-theme .author-image-section {
   background:
     radial-gradient(circle at 74% 20%, rgba(0, 0, 0, .05), transparent 22rem),
     linear-gradient(180deg, #f4f4f6, #e8e8ec);
@@ -448,6 +489,17 @@ body.light-theme .author-socials a:focus-visible {
   border-color: #08080a;
   background: #08080a;
   color: #fff;
+}
+
+body.light-theme .author-image-frame {
+  border-color: rgba(8, 8, 10, .12);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .72), rgba(255, 255, 255, .32)),
+    #f4f4f6;
+}
+
+body.light-theme .author-image-frame:before {
+  border-color: rgba(8, 8, 10, .1);
 }
 
 body.light-theme .author-line,
@@ -488,6 +540,15 @@ body.light-theme .author-recognition {
   .author-page-hero {
     min-height: auto;
     padding-top: 7.4rem;
+  }
+
+  .author-image-section {
+    padding-top: 0;
+  }
+
+  .author-image-frame img {
+    aspect-ratio: 4 / 3;
+    object-position: 52% 42%;
   }
 
   .author-heading h1 {
