@@ -5,7 +5,7 @@
 
 .author-page .site-header {
   color: #f8f8f8;
-  background: linear-gradient(180deg, rgba(9, 9, 9, .86), rgba(9, 9, 9, .28), transparent);
+  background: linear-gradient(180deg, rgba(9, 9, 9, .88), rgba(9, 9, 9, .32), transparent);
 }
 
 .author-page .desktop-nav a.active:after {
@@ -26,13 +26,13 @@
   position: relative;
   min-height: 100svh;
   display: grid;
-  grid-template-columns: minmax(0, .92fr) minmax(17rem, .54fr);
+  grid-template-columns: minmax(0, .92fr) minmax(18rem, .52fr);
   gap: clamp(2rem, 6vw, 7rem);
-  align-items: end;
-  padding: 8rem var(--pad) clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+  padding: 8rem var(--pad) clamp(3.5rem, 6vw, 6rem);
   overflow: hidden;
   background:
-    radial-gradient(circle at 72% 24%, rgba(255, 255, 255, .09), transparent 22rem),
+    radial-gradient(circle at 74% 20%, rgba(255, 255, 255, .08), transparent 22rem),
     linear-gradient(180deg, #111013, #080808);
 }
 
@@ -43,140 +43,249 @@
 }
 
 .author-kicker {
-  margin: 0 0 1rem;
-  color: rgba(255, 255, 255, .58);
+  margin: 0 0 clamp(1.6rem, 3vw, 2.8rem);
+  color: rgba(255, 255, 255, .62);
   font: 800 .72rem/1 var(--display);
   letter-spacing: .16em;
 }
 
-.author-page h1 {
+.author-heading h1 {
   margin: 0;
   color: #fff;
-  font: 560 clamp(5rem, 12vw, 14rem)/.78 var(--display);
-  letter-spacing: -.085em;
+  font: 520 clamp(4.2rem, 8.4vw, 10.5rem)/.86 var(--display);
+  letter-spacing: -.08em;
+}
+
+.author-heading-row {
+  display: grid;
+  grid-template-columns: minmax(5rem, .38fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3.2vw, 4rem);
+  align-items: center;
+  margin-top: clamp(.5rem, 1.2vw, 1rem);
+  padding-left: clamp(2.5rem, 10vw, 13rem);
+}
+
+.author-line {
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, .22);
+}
+
+.author-inline-image {
+  display: inline-flex;
+  width: clamp(4.6rem, 10vw, 9rem);
+  aspect-ratio: 1.65;
+  margin-left: .28em;
+  vertical-align: .04em;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .14);
+}
+
+.author-inline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 54% 47%;
+  filter: contrast(1.08) brightness(.88);
 }
 
 .author-page-lead {
-  max-width: 38rem;
-  margin: clamp(1.4rem, 3vw, 2.6rem) 0 0;
-  color: rgba(255, 255, 255, .72);
-  font-size: clamp(1.05rem, 1.55vw, 1.55rem);
-  line-height: 1.55;
+  max-width: 37rem;
+  margin: clamp(1.8rem, 3vw, 3rem) 0 0 auto;
+  color: rgba(255, 255, 255, .66);
+  font-size: clamp(1.02rem, 1.35vw, 1.35rem);
+  line-height: 1.65;
 }
 
 .author-page-portrait {
   justify-self: end;
-  width: min(28rem, 34vw);
+  width: min(31rem, 35vw);
+  min-height: clamp(28rem, 48vw, 42rem);
   margin: 0;
-  border-radius: clamp(1.8rem, 4vw, 4rem);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: clamp(2rem, 4.4vw, 5rem);
   overflow: hidden;
   background: #0d0d0f;
-  box-shadow: 0 3rem 7rem rgba(0, 0, 0, .52);
+  box-shadow: 0 3rem 8rem rgba(0, 0, 0, .58);
+}
+
+.author-page-portrait:before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .author-page-portrait:after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, .06), transparent 24%, rgba(0, 0, 0, .22)),
-    repeating-linear-gradient(180deg, rgba(255, 255, 255, .035) 0 1px, transparent 1px 8px);
+    radial-gradient(circle at 50% 18%, transparent 0 28%, rgba(0, 0, 0, .45) 68%),
+    linear-gradient(180deg, rgba(255, 255, 255, .04), transparent 22%, rgba(0, 0, 0, .22)),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, .032) 0 1px, transparent 1px 8px);
   mix-blend-mode: screen;
-  opacity: .22;
+  opacity: .34;
   pointer-events: none;
 }
 
 .author-page-portrait img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4.6;
+  height: 100%;
   object-fit: cover;
-  object-position: 50% 20%;
-  filter: grayscale(1) contrast(1.08) brightness(.96);
+  object-position: 54% 50%;
+  filter: contrast(1.12) brightness(.74) saturate(.78);
+  transform: scale(1.08);
 }
 
 .author-page-grain {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: .06;
+  opacity: .055;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
 }
 
-.author-story {
-  background: #090909;
+.author-image-strip {
+  position: relative;
+  height: clamp(22rem, 48vw, 46rem);
+  overflow: hidden;
+  background: #080808;
 }
 
-.author-story-grid {
-  display: grid;
-  grid-template-columns: minmax(16rem, .62fr) minmax(0, .9fr);
-  gap: clamp(2rem, 7vw, 8rem);
-  margin-top: clamp(2.5rem, 5vw, 5rem);
-}
-
-.author-story h2,
-.author-rebound h2 {
-  margin: 0;
-  color: #fff;
-  font: 520 clamp(2.8rem, 5.8vw, 7rem)/.92 var(--display);
-  letter-spacing: -.065em;
-}
-
-.author-story-copy {
-  display: grid;
-  gap: 1.15rem;
-}
-
-.author-story-copy p,
-.author-rebound-copy p {
-  margin: 0;
-  color: rgba(255, 255, 255, .64);
-  font-size: clamp(.98rem, 1.15vw, 1.1rem);
-  line-height: 1.7;
-}
-
-.author-proof {
+.author-image-strip:after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, .08), transparent 24rem),
-    linear-gradient(180deg, #111013, #080808);
-  border-top-left-radius: clamp(2rem, 6vw, 7rem);
-  border-top-right-radius: clamp(2rem, 6vw, 7rem);
+    linear-gradient(180deg, rgba(0, 0, 0, .06), rgba(0, 0, 0, .25)),
+    radial-gradient(circle at 50% 40%, transparent 0 34%, rgba(0, 0, 0, .44) 78%);
+  pointer-events: none;
 }
 
-.author-proof-grid {
+.author-image-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 48%;
+  filter: contrast(1.08) brightness(.82) saturate(.82);
+}
+
+.author-experiences,
+.author-skills {
+  background: #1b1b1d;
+  color: #f8f8f8;
+}
+
+.author-section-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: minmax(12rem, .26fr) minmax(0, .74fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: start;
 }
 
-.author-proof-card {
-  min-height: 20rem;
-  display: flex;
-  flex-direction: column;
-  padding: clamp(1.25rem, 2.5vw, 2rem);
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: clamp(1.25rem, 2.4vw, 2rem);
-  background: linear-gradient(145deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .026));
-  box-shadow: 0 2rem 5rem rgba(0, 0, 0, .22);
+.author-section-intro {
+  position: sticky;
+  top: 7rem;
 }
 
-.author-proof-card span {
-  color: rgba(255, 255, 255, .52);
-  font: 700 .8rem/1 var(--display);
-}
-
-.author-proof-card h3 {
-  margin: auto 0 1rem;
+.author-section-intro h2 {
+  margin: 0;
   color: #fff;
-  font: 520 clamp(1.75rem, 2.8vw, 3rem)/1 var(--display);
+  font: 520 clamp(2.6rem, 4.6vw, 5.4rem)/.95 var(--display);
+  letter-spacing: -.06em;
+}
+
+.author-experience-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, .22);
+}
+
+.author-experience-item {
+  min-height: 23rem;
+  padding: clamp(1.5rem, 3vw, 3rem) clamp(1rem, 2.4vw, 2rem);
+  border-right: 1px solid rgba(255, 255, 255, .16);
+  border-bottom: 1px solid rgba(255, 255, 255, .22);
+}
+
+.author-experience-item:nth-child(2n) {
+  border-right: 0;
+}
+
+.author-experience-item span,
+.author-skill-card span {
+  color: rgba(255, 255, 255, .55);
+  font: 700 .82rem/1 var(--display);
+}
+
+.author-experience-item h3 {
+  margin: clamp(1.6rem, 3vw, 2.5rem) 0 .8rem;
+  color: #fff;
+  font: 520 clamp(1.9rem, 3.1vw, 3.2rem)/1 var(--display);
   letter-spacing: -.045em;
 }
 
-.author-proof-card p {
+.author-experience-item .role {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 1rem;
+  padding: .45rem .72rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  color: rgba(255, 255, 255, .74);
+  font: 700 .78rem/1 var(--display);
+}
+
+.author-experience-item p:not(.role),
+.author-skill-card p {
   margin: 0;
   color: rgba(255, 255, 255, .58);
-  font-size: .96rem;
-  line-height: 1.62;
+  font-size: clamp(.94rem, 1.06vw, 1.04rem);
+  line-height: 1.66;
+}
+
+.author-skills {
+  padding-top: clamp(4.5rem, 8vw, 8rem);
+}
+
+.author-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.author-skill-card {
+  min-height: 20rem;
+  padding: clamp(1.5rem, 3vw, 2.7rem);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: clamp(1.5rem, 3vw, 3rem);
+  background: linear-gradient(145deg, rgba(255, 255, 255, .068), rgba(255, 255, 255, .024));
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, .22);
+}
+
+.author-skill-card strong {
+  display: block;
+  margin-bottom: clamp(1.8rem, 3vw, 3rem);
+  color: #fff;
+  font: 600 clamp(2.6rem, 5vw, 6rem)/.9 var(--display);
+  letter-spacing: -.07em;
+}
+
+.author-skill-card strong small {
+  font-size: .45em;
+}
+
+.author-skill-card span {
+  display: block;
+  margin-bottom: .9rem;
+  color: rgba(255, 255, 255, .72);
 }
 
 .author-rebound {
@@ -189,8 +298,10 @@
 }
 
 .author-rebound h2 {
-  color: #090909;
   margin: .85rem 0 1.5rem;
+  color: #090909;
+  font: 520 clamp(2.8rem, 5.8vw, 7rem)/.92 var(--display);
+  letter-spacing: -.065em;
 }
 
 .author-rebound-copy {
@@ -198,7 +309,10 @@
 }
 
 .author-rebound-copy p {
+  margin: 0 0 1.05rem;
   color: rgba(9, 9, 9, .68);
+  font-size: clamp(.98rem, 1.15vw, 1.1rem);
+  line-height: 1.7;
 }
 
 .author-rebound-copy strong {
@@ -225,67 +339,97 @@ body.light-theme.author-page {
 }
 
 body.light-theme .author-page-hero,
-body.light-theme .author-story,
-body.light-theme .author-proof {
+body.light-theme .author-experiences,
+body.light-theme .author-skills {
   background:
-    radial-gradient(circle at 72% 24%, rgba(0, 0, 0, .05), transparent 22rem),
+    radial-gradient(circle at 74% 20%, rgba(0, 0, 0, .05), transparent 22rem),
     linear-gradient(180deg, #f4f4f6, #e8e8ec);
+}
+
+body.light-theme .author-heading h1,
+body.light-theme .author-section-intro h2,
+body.light-theme .author-experience-item h3,
+body.light-theme .author-skill-card strong {
+  color: #08080a;
 }
 
 body.light-theme .author-kicker,
 body.light-theme .author-page-lead,
-body.light-theme .author-story-copy p,
-body.light-theme .author-proof-card p {
+body.light-theme .author-experience-item p:not(.role),
+body.light-theme .author-skill-card p {
   color: rgba(8, 8, 10, .66);
 }
 
-body.light-theme .author-page h1,
-body.light-theme .author-story h2,
-body.light-theme .author-proof-card h3 {
-  color: #08080a;
+body.light-theme .author-line,
+body.light-theme .author-experience-list,
+body.light-theme .author-experience-item {
+  border-color: rgba(8, 8, 10, .14);
 }
 
-body.light-theme .author-proof-card {
+body.light-theme .author-experience-item span,
+body.light-theme .author-skill-card span {
+  color: rgba(8, 8, 10, .58);
+}
+
+body.light-theme .author-experience-item .role {
+  background: rgba(8, 8, 10, .08);
+  color: rgba(8, 8, 10, .72);
+}
+
+body.light-theme .author-skill-card {
   border-color: rgba(8, 8, 10, .12);
   background: rgba(255, 255, 255, .58);
 }
 
-body.light-theme .author-proof-card span {
-  color: rgba(8, 8, 10, .48);
-}
-
-@media (max-width: 980px) {
+@media (max-width: 1120px) {
   .author-page-hero,
-  .author-story-grid,
+  .author-section-grid,
   .author-rebound {
     grid-template-columns: 1fr;
   }
 
   .author-page-portrait {
     justify-self: start;
-    width: min(26rem, 82vw);
+    width: min(42rem, 100%);
+    min-height: clamp(19rem, 54vw, 32rem);
   }
 
-  .author-proof-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .author-proof-card {
-    min-height: 15rem;
-  }
-
-  .author-rebound-actions {
-    min-width: 0;
+  .author-section-intro {
+    position: static;
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 760px) {
   .author-page-hero {
     min-height: auto;
-    padding-top: 7.2rem;
+    padding-top: 7.4rem;
   }
 
-  .author-page h1 {
-    font-size: clamp(4rem, 21vw, 7rem);
+  .author-heading h1 {
+    font-size: clamp(3.8rem, 18vw, 7rem);
+  }
+
+  .author-heading-row {
+    grid-template-columns: minmax(3rem, .28fr) 1fr;
+    padding-left: 0;
+  }
+
+  .author-page-lead {
+    margin-left: 0;
+  }
+
+  .author-experience-list,
+  .author-skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .author-experience-item,
+  .author-experience-item:nth-child(2n) {
+    min-height: auto;
+    border-right: 0;
+  }
+
+  .author-skill-card {
+    min-height: auto;
   }
 }
