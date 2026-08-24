@@ -105,8 +105,7 @@
 }
 
 .author-experiences,
-.author-skills,
-.author-recognition {
+.author-skills {
   background: #1b1b1d;
   color: #f8f8f8;
 }
@@ -179,49 +178,82 @@
   line-height: 1.66;
 }
 
-.author-skills {
+.author-skills.awards.skills {
   padding-top: clamp(4.5rem, 8vw, 8rem);
+  padding-bottom: clamp(4.5rem, 8vw, 8rem);
 }
 
-.author-skill-presentation,
-.recognition-grid {
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
+.brilio-container {
+  width: min(100%, 86rem);
+  margin-inline: auto;
 }
 
-.author-stat-grid {
+.brilio-row {
+  display: grid;
+  grid-template-columns: minmax(12rem, .26fr) minmax(0, .74fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: start;
+}
+
+.sticky .intro {
+  position: sticky;
+  top: 7rem;
+}
+
+.author-skills .intro .title {
+  margin: 0;
+  color: #fff;
+  font: 520 clamp(2.6rem, 4.6vw, 5.4rem)/.95 var(--display);
+  letter-spacing: -.06em;
+}
+
+.items {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 5vw, 6rem);
+  gap: clamp(2.4rem, 5vw, 6rem);
 }
 
-.author-stat-card {
+.items .item .content {
   min-height: 13rem;
 }
 
-.author-stat-card .stat-icon {
-  display: inline-block;
-  margin-right: .35rem;
+.skills .item .icon {
   color: rgba(255, 255, 255, .54);
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1;
 }
 
-.author-stat-card strong {
-  display: inline-block;
+.skills .item .heading {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+}
+
+.skills .item .heading .title {
+  margin: 0;
   color: #fff;
-  font: 520 clamp(3rem, 5vw, 5.2rem)/.88 var(--display);
+  font: 520 clamp(2.9rem, 4.7vw, 5rem)/.88 var(--display);
   letter-spacing: -.07em;
+  text-transform: lowercase;
 }
 
-.author-stat-card small,
-.author-skill-meter > span {
+.skills .item:first-child .heading .title {
+  text-transform: none;
+}
+
+.skills .item small {
+  font-size: .62em;
+}
+
+.skills .item span {
   display: block;
-  margin: .55rem 0 1.25rem;
+  margin: .65rem 0 1.25rem;
   color: rgba(255, 255, 255, .62);
-  font: 800 clamp(.92rem, 1vw, 1.04rem)/1.35 var(--display);
+  font: 800 clamp(.9rem, 1vw, 1.04rem)/1.35 var(--display);
 }
 
-.author-stat-card p,
-.recognition-card p {
+.skills .item p,
+.awards .item p {
   max-width: 29rem;
   margin: 0;
   color: rgba(255, 255, 255, .58);
@@ -229,30 +261,42 @@
   line-height: 1.65;
 }
 
-.author-skill-meter {
-  align-self: center;
+.progress-content {
+  display: flex;
+  align-items: center;
 }
 
-.skill-track {
+.progress {
   position: relative;
   width: min(32rem, 100%);
   height: .75rem;
-  margin-top: 1.2rem;
+  margin-top: 2.8rem;
+  overflow: visible;
   border-radius: 999px;
   background: rgba(255, 255, 255, .22);
 }
 
-.skill-track i {
-  display: block;
+.progress .title {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + .85rem);
+  margin: 0;
+  color: rgba(255, 255, 255, .62);
+  font: 800 clamp(.9rem, 1vw, 1.04rem)/1.35 var(--display);
+}
+
+.progress .progress-bar {
+  position: relative;
   width: 94%;
   height: 100%;
+  overflow: visible;
   border-radius: inherit;
   background: #a8b2bf;
 }
 
-.skill-track b {
+.progress .progress-bar span {
   position: absolute;
-  right: 4%;
+  right: -1rem;
   bottom: calc(100% + .75rem);
   padding: .55rem .7rem;
   border-radius: .45rem;
@@ -261,7 +305,7 @@
   font: 900 .8rem/1 var(--display);
 }
 
-.skill-track b:after {
+.progress .progress-bar span:before {
   content: "";
   position: absolute;
   left: 50%;
@@ -271,23 +315,21 @@
   border-top-color: #f7f7f7;
 }
 
-.author-recognition {
-  padding-top: clamp(4.5rem, 8vw, 8rem);
+.skills hr {
+  margin: clamp(4.5rem, 7vw, 6.25rem) 0;
+  border: 0;
   border-top: 1px solid rgba(255, 255, 255, .12);
 }
 
-.recognition-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 5vw, 6rem);
-  padding-bottom: clamp(2rem, 5vw, 5rem);
+.recognition-items .item .content {
+  min-height: 14rem;
 }
 
-.recognition-card strong {
-  display: block;
-  margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
+.awards .logo {
+  display: inline-block;
+  margin-bottom: clamp(1.4rem, 2.4vw, 2.4rem);
   color: #fff;
-  font: 900 clamp(2.8rem, 4vw, 4.5rem)/1 var(--display);
+  font: 900 clamp(2.6rem, 4vw, 4.4rem)/1 var(--display);
   letter-spacing: -.06em;
 }
 

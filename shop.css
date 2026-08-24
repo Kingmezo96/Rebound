@@ -9,12 +9,12 @@
 
 .shop-hero {
   position: relative;
-  min-height: 78svh;
+  min-height: 82svh;
   display: grid;
-  grid-template-columns: minmax(0, .92fr) minmax(17rem, 25rem);
-  align-items: end;
-  gap: clamp(1.8rem, 4.5vw, 5rem);
-  padding: 7rem var(--pad) clamp(2rem, 3.6vw, 3.6rem);
+  grid-template-columns: minmax(0, .78fr) minmax(17rem, .32fr);
+  align-items: center;
+  gap: clamp(2rem, 5.5vw, 6rem);
+  padding: 8.2rem var(--pad) clamp(3rem, 5vw, 5.5rem);
   overflow: hidden;
   background: #080808;
 }
@@ -39,8 +39,8 @@
 .shop-shade {
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, .9), rgba(0, 0, 0, .3) 54%, rgba(0, 0, 0, .74)),
-    linear-gradient(180deg, rgba(0, 0, 0, .06), rgba(0, 0, 0, .96));
+    linear-gradient(90deg, rgba(0, 0, 0, .92), rgba(0, 0, 0, .48) 54%, rgba(0, 0, 0, .82)),
+    linear-gradient(180deg, rgba(0, 0, 0, .16), rgba(0, 0, 0, .96));
 }
 
 .shop-hero-content,
@@ -50,34 +50,54 @@
 }
 
 .shop-kicker {
-  margin: 0 0 .9rem;
-  color: rgba(255, 255, 255, .68);
-  font: 800 .68rem/1 var(--display);
-  letter-spacing: .18em;
+  margin: 0 0 clamp(1.15rem, 2vw, 1.8rem);
+  color: rgba(255, 255, 255, .58);
+  font: 800 .72rem/1 var(--display);
+  letter-spacing: .16em;
   text-transform: none;
 }
 
-.shop-hero h1 {
+.shop-hero .title {
   margin: 0;
   color: #fff;
-  max-width: 12ch;
-  font: 520 clamp(3rem, 6.1vw, 6.75rem)/.9 var(--display);
-  letter-spacing: -.06em;
+  font: 520 clamp(4.3rem, 9.4vw, 10.8rem)/.86 var(--display);
+  letter-spacing: -.085em;
   text-transform: none;
   text-shadow: 0 2rem 5rem rgba(0, 0, 0, .78);
 }
 
-.shop-hero-content > p:not(.shop-kicker) {
-  width: min(25rem, 100%);
-  margin: .9rem 0 1.45rem;
+.shop-hero .flex {
+  display: grid;
+  grid-template-columns: minmax(4rem, .28fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: center;
+  width: min(60rem, 100%);
+  margin-top: .25rem;
+  margin-left: clamp(1rem, 9vw, 10rem);
+}
+
+.shop-hero .line {
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, .35);
+}
+
+.shop-hero .animate-line {
+  transform-origin: left;
+  animation: shopLine 1.45s cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.shop-hero .sub-title {
+  width: min(34rem, 100%);
+  margin: clamp(1.35rem, 2.4vw, 2.2rem) 0 1.45rem auto;
   color: rgba(255, 255, 255, .7);
-  font-size: clamp(.88rem, 1vw, .98rem);
-  line-height: 1.55;
+  font-size: clamp(.96rem, 1.16vw, 1.12rem);
+  line-height: 1.68;
 }
 
 .shop-cover {
   justify-self: end;
-  width: min(20.5rem, 30vw);
+  width: min(22rem, 28vw);
   margin: 0;
   perspective: 1200px;
 }
@@ -429,6 +449,18 @@ body.light-theme .use-custom:focus-visible {
   }
 }
 
+@keyframes shopLine {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 980px) {
   .shop-hero,
   .preorder-grid {
@@ -437,7 +469,7 @@ body.light-theme .use-custom:focus-visible {
 
   .shop-cover {
     justify-self: start;
-    width: min(18rem, 62vw);
+    width: min(18rem, 56vw);
   }
 
   .tier-grid {
@@ -453,6 +485,19 @@ body.light-theme .use-custom:focus-visible {
 
   .shop-hero h1 {
     font-size: clamp(3.3rem, 15vw, 5rem);
+  }
+
+  .shop-hero .title {
+    font-size: clamp(3.4rem, 17vw, 5.4rem);
+  }
+
+  .shop-hero .flex {
+    grid-template-columns: minmax(2.8rem, .22fr) 1fr;
+    margin-left: 0;
+  }
+
+  .shop-hero .sub-title {
+    margin-left: 0;
   }
 
   .preorder-form > .checkout-button {
