@@ -91,13 +91,13 @@
       <div class="shop-backdrop" aria-hidden="true"><img src="assets/rebound-hero-ai-16k.webp" width="16383" height="9215" decoding="async" fetchpriority="high" alt=""></div>
       <div class="shop-shade" aria-hidden="true"></div>
       <div class="shop-hero-content content w-60 reveal">
-        <p class="shop-kicker">Official shop</p>
+        <p class="shop-kicker">Official shop / Pre-order access</p>
         <h1 id="shop-title" class="title">Pre-order</h1>
         <div class="flex ms-auto">
           <span class="line animate-line" aria-hidden="true"></span>
           <h2 class="title">REBOUND</h2>
         </div>
-        <p class="sub-title">Be among the first to get the book. Select an access tier and continue securely through Paystack.</p>
+        <p class="sub-title">Be among the first to get the book. Choose a tier and continue securely through Paystack.</p>
         <a class="pill primary" href="#preorder">Choose access <span aria-hidden="true">↘</span></a>
       </div>
       <figure class="shop-cover image-holder reveal" aria-label="Rebound book cover">
@@ -111,7 +111,7 @@
         <div class="preorder-copy reveal">
           <p class="small-label">Secure the book</p>
           <h2 id="preorder-title">Pre-order details.</h2>
-          <p>A simple checkout for readers, supporters, and early access patrons.</p>
+          <p>Select a tier, add your details, and complete checkout securely.</p>
           <div class="selected-ticket" aria-live="polite">
             <span>Selected</span>
             <strong data-selected-label>Regular</strong>
@@ -120,21 +120,30 @@
         </div>
 
         <form class="preorder-form reveal" data-paystack-form novalidate>
-          <div class="tier-grid" role="radiogroup" aria-label="Pre-order tiers">
-            <button class="tier-card" type="button" data-tier="vip" data-amount="1000000" aria-pressed="false">
-              <span>VIP</span>
-              <strong>₦1,000,000</strong>
-              <small>Premium pre-order access</small>
+          <div class="tier-grid service-list" role="radiogroup" aria-label="Pre-order tiers">
+            <button class="tier-card item" type="button" data-tier="vip" data-label="VIP" data-amount="1000000" aria-pressed="false">
+              <b class="item-count">01</b>
+              <span class="service-content">
+                <span>VIP</span>
+                <strong>₦1,000,000</strong>
+                <small>Premium pre-order access</small>
+              </span>
             </button>
-            <button class="tier-card" type="button" data-tier="standard" data-amount="500000" aria-pressed="false">
-              <span>Standard</span>
-              <strong>₦500,000</strong>
-              <small>Signature pre-order tier</small>
+            <button class="tier-card item" type="button" data-tier="standard" data-label="Standard" data-amount="500000" aria-pressed="false">
+              <b class="item-count">02</b>
+              <span class="service-content">
+                <span>Standard</span>
+                <strong>₦500,000</strong>
+                <small>Signature pre-order tier</small>
+              </span>
             </button>
-            <button class="tier-card active" type="button" data-tier="regular" data-amount="20000" aria-pressed="true">
-              <span>Regular</span>
-              <strong>₦20,000</strong>
-              <small>Reserve your copy</small>
+            <button class="tier-card item active" type="button" data-tier="regular" data-label="Regular" data-amount="20000" aria-pressed="true">
+              <b class="item-count">03</b>
+              <span class="service-content">
+                <span>Regular</span>
+                <strong>₦20,000</strong>
+                <small>Reserve your copy</small>
+              </span>
             </button>
           </div>
 

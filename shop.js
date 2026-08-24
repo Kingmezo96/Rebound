@@ -114,7 +114,7 @@ document.querySelectorAll('[data-paystack-form]').forEach(paystackForm => {
     button.addEventListener('click', () => {
       updateSelected({
         tier: button.dataset.tier,
-        label: button.querySelector('span').textContent,
+        label: button.dataset.label || button.querySelector('span').textContent,
         amount: Number(button.dataset.amount)
       });
       status.textContent = '';

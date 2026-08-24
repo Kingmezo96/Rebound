@@ -9,12 +9,12 @@
 
 .shop-hero {
   position: relative;
-  min-height: 82svh;
+  min-height: 62svh;
   display: grid;
-  grid-template-columns: minmax(0, .78fr) minmax(17rem, .32fr);
+  grid-template-columns: minmax(0, .82fr) minmax(12rem, .22fr);
   align-items: center;
-  gap: clamp(2rem, 5.5vw, 6rem);
-  padding: 8.2rem var(--pad) clamp(3rem, 5vw, 5.5rem);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: 7.2rem var(--pad) clamp(2.1rem, 3.6vw, 3.6rem);
   overflow: hidden;
   background: #080808;
 }
@@ -50,9 +50,9 @@
 }
 
 .shop-kicker {
-  margin: 0 0 clamp(1.15rem, 2vw, 1.8rem);
+  margin: 0 0 clamp(.85rem, 1.6vw, 1.25rem);
   color: rgba(255, 255, 255, .58);
-  font: 800 .72rem/1 var(--display);
+  font: 800 .66rem/1 var(--display);
   letter-spacing: .16em;
   text-transform: none;
 }
@@ -60,7 +60,7 @@
 .shop-hero .title {
   margin: 0;
   color: #fff;
-  font: 520 clamp(4.3rem, 9.4vw, 10.8rem)/.86 var(--display);
+  font: 520 clamp(3.2rem, 7.4vw, 8.2rem)/.86 var(--display);
   letter-spacing: -.085em;
   text-transform: none;
   text-shadow: 0 2rem 5rem rgba(0, 0, 0, .78);
@@ -68,12 +68,12 @@
 
 .shop-hero .flex {
   display: grid;
-  grid-template-columns: minmax(4rem, .28fr) minmax(0, 1fr);
-  gap: clamp(1.25rem, 3vw, 3rem);
+  grid-template-columns: minmax(3.5rem, .24fr) minmax(0, 1fr);
+  gap: clamp(1rem, 2.4vw, 2.25rem);
   align-items: center;
-  width: min(60rem, 100%);
+  width: min(48rem, 100%);
   margin-top: .25rem;
-  margin-left: clamp(1rem, 9vw, 10rem);
+  margin-left: clamp(1rem, 7vw, 8rem);
 }
 
 .shop-hero .line {
@@ -88,16 +88,16 @@
 }
 
 .shop-hero .sub-title {
-  width: min(34rem, 100%);
-  margin: clamp(1.35rem, 2.4vw, 2.2rem) 0 1.45rem auto;
+  width: min(29rem, 100%);
+  margin: clamp(1rem, 1.8vw, 1.55rem) 0 1.25rem auto;
   color: rgba(255, 255, 255, .7);
-  font-size: clamp(.96rem, 1.16vw, 1.12rem);
-  line-height: 1.68;
+  font-size: clamp(.88rem, 1vw, 1rem);
+  line-height: 1.58;
 }
 
 .shop-cover {
   justify-self: end;
-  width: min(22rem, 28vw);
+  width: min(15rem, 20vw);
   margin: 0;
   perspective: 1200px;
 }
@@ -132,8 +132,8 @@
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
-  box-shadow: 0 2.5rem 5rem rgba(0, 0, 0, .68);
-  transform: rotateY(-8deg) rotateZ(-1.2deg);
+  box-shadow: 0 1.8rem 3.6rem rgba(0, 0, 0, .64);
+  transform: rotateY(-7deg) rotateZ(-1deg);
   transform-origin: left center;
 }
 
@@ -148,15 +148,15 @@
 
 .preorder-grid {
   display: grid;
-  grid-template-columns: minmax(16rem, .42fr) minmax(0, 1fr);
-  gap: clamp(2rem, 6vw, 7rem);
+  grid-template-columns: minmax(14rem, .34fr) minmax(0, 1fr);
+  gap: clamp(1.8rem, 4.6vw, 5rem);
   align-items: start;
 }
 
 .preorder-copy h2 {
   margin: 0;
   color: #fff;
-  font: 520 clamp(2.8rem, 5vw, 6rem)/.94 var(--display);
+  font: 520 clamp(2.4rem, 4.2vw, 4.8rem)/.94 var(--display);
   letter-spacing: -.065em;
   text-transform: none;
 }
@@ -169,11 +169,11 @@
 }
 
 .selected-ticket {
-  width: min(22rem, 100%);
-  margin-top: clamp(1.8rem, 3.4vw, 3rem);
-  padding: 1.35rem;
+  width: min(18rem, 100%);
+  margin-top: clamp(1.4rem, 2.6vw, 2.2rem);
+  padding: 1.1rem;
   border: 0;
-  border-radius: 1.75rem;
+  border-radius: 1.35rem;
   background: #f4f4f6;
   color: #070a12;
   backdrop-filter: none;
@@ -204,16 +204,16 @@
 
 .selected-ticket b {
   color: #070a12;
-  font-size: clamp(1.9rem, 3.4vw, 3.1rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.45rem);
   line-height: .9;
 }
 
 .preorder-form {
   position: relative;
   display: grid;
-  gap: 1.45rem;
-  padding: clamp(1.6rem, 3.2vw, 3rem);
-  border-radius: clamp(1.8rem, 4vw, 3.5rem);
+  gap: 1.1rem;
+  padding: clamp(1.2rem, 2.4vw, 2.2rem);
+  border-radius: clamp(1.4rem, 3vw, 2.6rem);
   background: #f4f4f6;
   color: #070a12;
   box-shadow: 0 2.4rem 6rem rgba(0, 0, 0, .3);
@@ -221,20 +221,48 @@
 
 .tier-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .72rem;
+  grid-template-columns: 1fr;
+  gap: .55rem;
 }
 
 .tier-card {
   min-height: auto;
-  padding: .92rem 1.05rem;
-  border: 1px solid rgba(7, 10, 18, .38);
-  border-radius: 999px;
+  display: grid;
+  grid-template-columns: 3.1rem 1fr;
+  align-items: center;
+  gap: .8rem;
+  padding: .45rem;
+  border: 1px solid rgba(7, 10, 18, .11);
+  border-radius: 1.35rem;
   background: transparent;
   color: #070a12;
   cursor: pointer;
-  text-align: center;
+  text-align: left;
   transition: transform .35s var(--brilio-ease), border-color .35s var(--brilio-ease), background .35s var(--brilio-ease), box-shadow .35s var(--brilio-ease);
+}
+
+.tier-card .item-count {
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  border-radius: 1rem;
+  background: rgba(7, 10, 18, .055);
+  color: rgba(7, 10, 18, .42);
+  font: 900 .76rem/1 var(--display);
+  letter-spacing: .04em;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.tier-card .service-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(5rem, .35fr) minmax(0, .65fr);
+  gap: .7rem;
+  align-items: center;
+  padding: .8rem .95rem;
+  border-radius: 1.05rem;
+  background: rgba(255, 255, 255, .62);
 }
 
 .tier-card:hover,
@@ -247,17 +275,41 @@
   box-shadow: none;
 }
 
+.tier-card:hover .service-content,
+.tier-card:focus-visible .service-content,
+.tier-card.active .service-content {
+  background: transparent;
+}
+
+.tier-card:hover .item-count,
+.tier-card:focus-visible .item-count,
+.tier-card.active .item-count {
+  background: rgba(255, 255, 255, .12);
+  color: rgba(255, 255, 255, .62);
+}
+
 .tier-card strong {
   display: block;
-  margin: .45rem 0 0;
+  margin: 0;
   color: currentColor;
-  font-size: clamp(1rem, 1.55vw, 1.45rem);
+  font-size: clamp(1rem, 1.55vw, 1.35rem);
   line-height: 1;
   letter-spacing: -.04em;
+  text-align: right;
 }
 
 .tier-card small {
-  display: none;
+  display: block;
+  grid-column: 1 / -1;
+  color: rgba(7, 10, 18, .52);
+  font-size: .78rem;
+  line-height: 1.35;
+}
+
+.tier-card:hover small,
+.tier-card:focus-visible small,
+.tier-card.active small {
+  color: rgba(255, 255, 255, .62);
 }
 
 .custom-amount,
@@ -288,7 +340,7 @@
   border: 0;
   background: transparent;
   color: #070a12;
-  padding: 1rem 0 1.05rem;
+  padding: .82rem 0 .88rem;
   font: 650 1rem var(--display);
   outline: none;
 }
@@ -345,7 +397,7 @@
   position: static;
   justify-self: start;
   min-width: clamp(10rem, 16vw, 13rem);
-  min-height: 3.7rem;
+  min-height: 3.35rem;
   border: 1px solid #020511;
   border-radius: 999px;
   background: #020511;
@@ -469,18 +521,14 @@ body.light-theme .use-custom:focus-visible {
 
   .shop-cover {
     justify-self: start;
-    width: min(18rem, 56vw);
-  }
-
-  .tier-grid {
-    grid-template-columns: 1fr;
+    width: min(13.5rem, 48vw);
   }
 }
 
 @media (max-width: 760px) {
   .shop-hero {
     min-height: auto;
-    padding-top: 6.8rem;
+    padding-top: 6.4rem;
   }
 
   .shop-hero h1 {
@@ -488,7 +536,7 @@ body.light-theme .use-custom:focus-visible {
   }
 
   .shop-hero .title {
-    font-size: clamp(3.4rem, 17vw, 5.4rem);
+    font-size: clamp(3.1rem, 15vw, 4.8rem);
   }
 
   .shop-hero .flex {
@@ -498,6 +546,18 @@ body.light-theme .use-custom:focus-visible {
 
   .shop-hero .sub-title {
     margin-left: 0;
+  }
+
+  .tier-card {
+    grid-template-columns: 2.7rem 1fr;
+  }
+
+  .tier-card .service-content {
+    grid-template-columns: 1fr;
+  }
+
+  .tier-card strong {
+    text-align: left;
   }
 
   .preorder-form > .checkout-button {
