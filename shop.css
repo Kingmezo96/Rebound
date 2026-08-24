@@ -9,12 +9,12 @@
 
 .shop-hero {
   position: relative;
-  min-height: 62svh;
+  min-height: 58svh;
   display: grid;
-  grid-template-columns: minmax(0, .82fr) minmax(12rem, .22fr);
-  align-items: center;
-  gap: clamp(1.5rem, 4vw, 4rem);
-  padding: 7.2rem var(--pad) clamp(2.1rem, 3.6vw, 3.6rem);
+  grid-template-columns: minmax(0, .68fr) minmax(15rem, .32fr);
+  align-items: end;
+  gap: clamp(1.6rem, 4.8vw, 5rem);
+  padding: 7.2rem var(--pad) clamp(2.4rem, 4vw, 4.2rem);
   overflow: hidden;
   background: #080808;
 }
@@ -66,7 +66,7 @@
 .shop-hero .title {
   margin: 0;
   color: #fff;
-  font: 520 clamp(3.2rem, 7.4vw, 8.2rem)/.86 var(--display);
+  font: 520 clamp(3.1rem, 6.8vw, 7.2rem)/.86 var(--display);
   letter-spacing: -.085em;
   text-transform: none;
   text-shadow: 0 2rem 5rem rgba(0, 0, 0, .78);
@@ -103,32 +103,29 @@
 
 .shop-cover {
   justify-self: end;
-  width: min(15rem, 20vw);
+  width: min(19rem, 28vw);
   margin: 0;
-  perspective: 1200px;
+  padding: clamp(.65rem, 1vw, .9rem);
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: clamp(1.4rem, 2.6vw, 2.4rem);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .035)),
+    rgba(10, 10, 10, .62);
+  box-shadow: 0 2rem 4.5rem rgba(0, 0, 0, .42);
+  overflow: hidden;
 }
 
 .shop-cover:before {
-  content: "";
-  position: absolute;
-  inset: 3% auto 3% -7%;
-  width: 8%;
-  background: linear-gradient(90deg, #050505, #2a2a2a 42%, #060606);
-  transform: skewY(-7deg);
-  transform-origin: right;
-  box-shadow: inset -1px 0 rgba(255, 255, 255, .18);
+  content: none;
 }
 
 .shop-cover:after {
   content: "";
   position: absolute;
-  left: 10%;
-  right: 0;
-  bottom: -7%;
-  height: 10%;
-  background: rgba(0, 0, 0, .72);
-  filter: blur(24px);
-  transform: skewX(-18deg);
+  inset: auto 12% .5rem;
+  height: 1.4rem;
+  background: rgba(0, 0, 0, .56);
+  filter: blur(18px);
 }
 
 .shop-cover img {
@@ -137,10 +134,11 @@
   display: block;
   width: 100%;
   aspect-ratio: 2 / 3;
-  object-fit: cover;
-  box-shadow: 0 1.8rem 3.6rem rgba(0, 0, 0, .64);
-  transform: rotateY(-7deg) rotateZ(-1deg);
-  transform-origin: left center;
+  object-fit: contain;
+  border-radius: clamp(.9rem, 1.6vw, 1.4rem);
+  box-shadow: 0 1.4rem 3rem rgba(0, 0, 0, .48);
+  transform: none;
+  transform-origin: center;
 }
 
 .preorder {
@@ -154,7 +152,7 @@
 
 .preorder-grid {
   display: grid;
-  grid-template-columns: minmax(14rem, .34fr) minmax(0, 1fr);
+  grid-template-columns: minmax(14rem, .31fr) minmax(0, .69fr);
   gap: clamp(1.8rem, 4.6vw, 5rem);
   align-items: start;
 }
@@ -217,27 +215,25 @@
 .preorder-form {
   position: relative;
   display: grid;
-  gap: 1.1rem;
-  padding: clamp(1.2rem, 2.4vw, 2.2rem);
-  border-radius: clamp(1.4rem, 3vw, 2.6rem);
-  background: #f4f4f6;
+  gap: clamp(1rem, 1.7vw, 1.45rem);
+  padding: clamp(1.35rem, 2.6vw, 2.6rem);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: clamp(1.8rem, 3.6vw, 3.2rem);
+  background: #f7f7f4;
   color: #070a12;
-  box-shadow: 0 2.4rem 6rem rgba(0, 0, 0, .3);
+  box-shadow: 0 2.8rem 7rem rgba(0, 0, 0, .34);
 }
 
 .tier-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: .55rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .72rem;
 }
 
 .tier-card {
   min-height: auto;
-  display: grid;
-  grid-template-columns: 3.1rem 1fr;
-  align-items: center;
-  gap: .8rem;
-  padding: .45rem;
+  display: block;
+  padding: .82rem;
   border: 1px solid rgba(7, 10, 18, .11);
   border-radius: 1.35rem;
   background: transparent;
@@ -248,27 +244,25 @@
 }
 
 .tier-card .item-count {
-  display: grid;
-  place-items: center;
-  align-self: stretch;
-  border-radius: 1rem;
-  background: rgba(7, 10, 18, .055);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  background: transparent;
   color: rgba(7, 10, 18, .42);
   font: 900 .76rem/1 var(--display);
   letter-spacing: .04em;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
+  writing-mode: horizontal-tb;
+  transform: none;
 }
 
 .tier-card .service-content {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(5rem, .35fr) minmax(0, .65fr);
-  gap: .7rem;
-  align-items: center;
-  padding: .8rem .95rem;
-  border-radius: 1.05rem;
-  background: rgba(255, 255, 255, .62);
+  grid-template-columns: 1fr;
+  gap: .58rem;
+  align-items: start;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .tier-card:hover,
@@ -298,10 +292,10 @@
   display: block;
   margin: 0;
   color: currentColor;
-  font-size: clamp(1rem, 1.55vw, 1.35rem);
+  font-size: clamp(1.15rem, 2vw, 1.7rem);
   line-height: 1;
   letter-spacing: -.04em;
-  text-align: right;
+  text-align: left;
 }
 
 .tier-card small {
@@ -322,10 +316,10 @@
 .buyer-grid {
   display: grid;
   gap: .5rem;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  padding: clamp(.9rem, 1.6vw, 1.25rem);
+  border: 1px solid rgba(7, 10, 18, .09);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, .58);
 }
 
 .amount-input {
@@ -401,15 +395,15 @@
 
 .preorder-form > .checkout-button {
   position: static;
-  justify-self: start;
-  min-width: clamp(10rem, 16vw, 13rem);
-  min-height: 3.35rem;
+  justify-self: stretch;
+  width: 100%;
+  min-height: 3.8rem;
   border: 1px solid #020511;
-  border-radius: 999px;
+  border-radius: 1.25rem;
   background: #020511;
   color: #fff;
   padding: 0 1.45rem;
-  font: 850 .72rem/1 var(--display);
+  font: 900 .78rem/1 var(--display);
   letter-spacing: .08em;
   text-transform: uppercase;
   overflow: hidden;
@@ -527,7 +521,11 @@ body.light-theme .use-custom:focus-visible {
 
   .shop-cover {
     justify-self: start;
-    width: min(13.5rem, 48vw);
+    width: min(15rem, 56vw);
+  }
+
+  .tier-grid {
+    grid-template-columns: 1fr;
   }
 }
 

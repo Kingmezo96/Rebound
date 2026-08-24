@@ -5,7 +5,7 @@ const countdown = document.querySelector('[data-countdown]');
 const cursor = document.querySelector('#cursor');
 
 window.addEventListener('load', () => {
-  window.setTimeout(() => loader.classList.add('done'), reduced ? 0 : 1450);
+  if (loader) window.setTimeout(() => loader.classList.add('done'), reduced ? 0 : 1450);
 });
 
 const storedTheme = window.localStorage.getItem('rebound-theme');
@@ -19,8 +19,10 @@ function setTheme(theme) {
   window.localStorage.setItem('rebound-theme', theme);
 }
 
-setTheme(storedTheme === 'light' ? 'light' : 'dark');
-themeToggle.addEventListener('click', () => setTheme(document.body.classList.contains('light-theme') ? 'dark' : 'light'));
+if (themeToggle) {
+  setTheme(storedTheme === 'light' ? 'light' : 'dark');
+  themeToggle.addEventListener('click', () => setTheme(document.body.classList.contains('light-theme') ? 'dark' : 'light'));
+}
 
 if (cursor && !reduced) {
   let cursorX = -50;
@@ -82,9 +84,11 @@ function setMenu(open) {
   menu.classList.toggle('open', open);
   document.body.classList.toggle('menu-open', open);
 }
-toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
-menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
-document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+if (toggle && menu) {
+  toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+}
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
