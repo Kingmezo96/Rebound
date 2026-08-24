@@ -18,7 +18,7 @@ ReboundBySol is the official website for REBOUND by Sol, also known as REBOUND b
 Title: REBOUND
 Author: Onu Sol Adah
 Official book page: https://reboundbysol.com/book/
-Pre-order page: https://reboundbysol.com/shop.html
+Pre-order page: https://reboundbysol.com/shop/
 
 REBOUND is a book about resilience, courage, grief, spiritual rebound, purpose after pain, and rising against the odds. It explores how people rebuild after severe adversity and how painful life experiences can become strength, clarity, and purpose.
 
@@ -33,7 +33,7 @@ Onu Sol Adah is a Nigerian writer, professional storyteller, and philanthropist.
 - Homepage: https://reboundbysol.com/
 - Book: https://reboundbysol.com/book/
 - Author: https://reboundbysol.com/author/
-- Shop / pre-order: https://reboundbysol.com/shop.html
+- Shop / pre-order: https://reboundbysol.com/shop/
 - Articles: https://reboundbysol.com/articles/
 - Contact: https://reboundbysol.com/contact.html
 - Podcast: https://reboundbysol.com/podcast.html

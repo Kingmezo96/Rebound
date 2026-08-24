@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://reboundbysol.com/sitemap.xml
+Sitemap: https://reboundbysol.com/sitemap.txt
