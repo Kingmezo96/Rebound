@@ -127,43 +127,44 @@
 
 .author-image-section {
   position: relative;
-  padding: 0 var(--pad) clamp(3.5rem, 7vw, 7rem);
-  background: #1b1b1d;
+  padding: 0;
+  background: #050505;
   color: #f8f8f8;
+  overflow: hidden;
 }
 
 .author-image-frame {
   position: relative;
-  width: min(100%, 86rem);
+  width: 100%;
   margin: 0 auto;
-  padding: clamp(.65rem, 1.4vw, 1.1rem);
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: clamp(2rem, 5vw, 5rem);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
   overflow: hidden;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .018)),
-    #111013;
-  box-shadow: 0 2.5rem 7rem rgba(0, 0, 0, .42);
+  background: #050505;
+  box-shadow: none;
 }
 
 .author-image-frame:before {
   content: "";
   position: absolute;
-  inset: clamp(1rem, 2vw, 1.7rem);
+  inset: 0;
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, .1);
-  border-radius: clamp(1.55rem, 4.2vw, 4rem);
+  border: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .72), transparent 24%, transparent 68%, rgba(0, 0, 0, .84)),
+    linear-gradient(180deg, rgba(0, 0, 0, .08), transparent 55%, rgba(0, 0, 0, .78));
   pointer-events: none;
 }
 
 .author-image-frame img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 7.4;
+  height: clamp(24rem, 43vw, 48rem);
   object-fit: cover;
-  object-position: center 44%;
-  border-radius: clamp(1.35rem, 4vw, 3.8rem);
-  filter: contrast(1.08) brightness(.82) saturate(.86);
+  object-position: 50% 38%;
+  border-radius: 0;
+  filter: contrast(1.12) brightness(.66) saturate(.82);
 }
 
 .author-page-grain {
@@ -493,9 +494,7 @@ body.light-theme .author-socials a:focus-visible {
 
 body.light-theme .author-image-frame {
   border-color: rgba(8, 8, 10, .12);
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, .72), rgba(255, 255, 255, .32)),
-    #f4f4f6;
+  background: #050505;
 }
 
 body.light-theme .author-image-frame:before {
@@ -547,8 +546,8 @@ body.light-theme .author-recognition {
   }
 
   .author-image-frame img {
-    aspect-ratio: 4 / 3;
-    object-position: 52% 42%;
+    height: 22rem;
+    object-position: 51% 34%;
   }
 
   .author-heading h1 {

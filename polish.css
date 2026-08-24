@@ -262,9 +262,14 @@ body {
   overflow: hidden;
 }
 
+.hero-image picture,
 .hero-image img {
+  display: block;
   width: 100%;
   height: 100%;
+}
+
+.hero-image img {
   object-fit: cover;
   object-position: 50% 50%;
   filter: contrast(1.04) brightness(.9);
@@ -673,6 +678,7 @@ body.light-theme .hero {
   color: #fff;
 }
 
+body.light-theme .brand-signal,
 body.light-theme .manifesto,
 body.light-theme .excerpt,
 body.light-theme .read,
@@ -1082,6 +1088,65 @@ body.light-theme .send-email:focus-visible {
 .section-pad {
   padding-top: clamp(4rem, 7vw, 7rem);
   padding-bottom: clamp(4rem, 7vw, 7rem);
+}
+
+.brand-signal {
+  background: #f7f7f3;
+  color: #090909;
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+}
+
+.brand-signal-grid {
+  display: grid;
+  grid-template-columns: minmax(12rem, .42fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 7rem);
+  align-items: start;
+}
+
+.brand-signal-copy h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(3.4rem, 9vw, 8.5rem);
+  line-height: .9;
+  letter-spacing: -.07em;
+}
+
+.brand-signal-copy p {
+  max-width: 58rem;
+  margin: 0 0 1rem;
+  color: rgba(9, 9, 9, .68);
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  line-height: 1.55;
+}
+
+.brand-token-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: clamp(1.6rem, 3vw, 2.6rem);
+}
+
+.brand-token-row span {
+  border: 1px solid rgba(9, 9, 9, .18);
+  border-radius: 999px;
+  padding: .72rem 1rem;
+  color: rgba(9, 9, 9, .75);
+  font: 700 .72rem var(--mono);
+  letter-spacing: .08em;
+}
+
+body:not(.light-theme) .brand-signal {
+  background: #101010;
+  color: #f8f8f8;
+  border-color: rgba(255, 255, 255, .08);
+}
+
+body:not(.light-theme) .brand-signal-copy p {
+  color: rgba(255, 255, 255, .68);
+}
+
+body:not(.light-theme) .brand-token-row span {
+  border-color: rgba(255, 255, 255, .16);
+  color: rgba(255, 255, 255, .72);
 }
 
 .manifesto-grid {
@@ -1598,6 +1663,20 @@ body.light-theme .showcase-copy > p:not(.small-label) {
 }
 
 @media (max-width: 760px) {
+  .brand-signal-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .brand-signal-copy h2 {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .brand-token-row span {
+    width: 100%;
+    text-align: center;
+  }
+
   .showcase-grid {
     grid-template-columns: 1fr;
   }
