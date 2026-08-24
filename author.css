@@ -24,11 +24,9 @@
 
 .author-page-hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 88svh;
   display: grid;
-  grid-template-columns: minmax(0, .92fr) minmax(18rem, .52fr);
-  gap: clamp(2rem, 6vw, 7rem);
-  align-items: center;
+  align-items: end;
   padding: 8rem var(--pad) clamp(3.5rem, 6vw, 6rem);
   overflow: hidden;
   background:
@@ -36,10 +34,10 @@
     linear-gradient(180deg, #111013, #080808);
 }
 
-.author-page-copy,
-.author-page-portrait {
+.author-page-copy {
   position: relative;
   z-index: 2;
+  max-width: 86rem;
 }
 
 .author-kicker {
@@ -98,52 +96,6 @@
   line-height: 1.65;
 }
 
-.author-page-portrait {
-  justify-self: end;
-  width: min(31rem, 35vw);
-  min-height: clamp(28rem, 48vw, 42rem);
-  margin: 0;
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: clamp(2rem, 4.4vw, 5rem);
-  overflow: hidden;
-  background: #0d0d0f;
-  box-shadow: 0 3rem 8rem rgba(0, 0, 0, .58);
-}
-
-.author-page-portrait:before {
-  content: "";
-  position: absolute;
-  inset: 1rem;
-  z-index: 2;
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: inherit;
-  pointer-events: none;
-}
-
-.author-page-portrait:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    radial-gradient(circle at 50% 18%, transparent 0 28%, rgba(0, 0, 0, .45) 68%),
-    linear-gradient(180deg, rgba(255, 255, 255, .04), transparent 22%, rgba(0, 0, 0, .22)),
-    repeating-linear-gradient(180deg, rgba(255, 255, 255, .032) 0 1px, transparent 1px 8px);
-  mix-blend-mode: screen;
-  opacity: .34;
-  pointer-events: none;
-}
-
-.author-page-portrait img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 54% 50%;
-  filter: contrast(1.12) brightness(.74) saturate(.78);
-  transform: scale(1.08);
-}
-
 .author-page-grain {
   position: absolute;
   inset: 0;
@@ -152,33 +104,9 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
 }
 
-.author-image-strip {
-  position: relative;
-  height: clamp(22rem, 48vw, 46rem);
-  overflow: hidden;
-  background: #080808;
-}
-
-.author-image-strip:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, .06), rgba(0, 0, 0, .25)),
-    radial-gradient(circle at 50% 40%, transparent 0 34%, rgba(0, 0, 0, .44) 78%);
-  pointer-events: none;
-}
-
-.author-image-strip img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 48%;
-  filter: contrast(1.08) brightness(.82) saturate(.82);
-}
-
 .author-experiences,
-.author-skills {
+.author-skills,
+.author-recognition {
   background: #1b1b1d;
   color: #f8f8f8;
 }
@@ -255,37 +183,112 @@
   padding-top: clamp(4.5rem, 8vw, 8rem);
 }
 
-.author-skill-grid {
+.author-skill-presentation,
+.recognition-grid {
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.author-stat-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: clamp(2rem, 5vw, 6rem);
 }
 
-.author-skill-card {
-  min-height: 20rem;
-  padding: clamp(1.5rem, 3vw, 2.7rem);
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: clamp(1.5rem, 3vw, 3rem);
-  background: linear-gradient(145deg, rgba(255, 255, 255, .068), rgba(255, 255, 255, .024));
-  box-shadow: 0 2rem 5rem rgba(0, 0, 0, .22);
+.author-stat-card {
+  min-height: 13rem;
 }
 
-.author-skill-card strong {
-  display: block;
-  margin-bottom: clamp(1.8rem, 3vw, 3rem);
+.author-stat-card .stat-icon {
+  display: inline-block;
+  margin-right: .35rem;
+  color: rgba(255, 255, 255, .54);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.author-stat-card strong {
+  display: inline-block;
   color: #fff;
-  font: 600 clamp(2.6rem, 5vw, 6rem)/.9 var(--display);
+  font: 520 clamp(3rem, 5vw, 5.2rem)/.88 var(--display);
   letter-spacing: -.07em;
 }
 
-.author-skill-card strong small {
-  font-size: .45em;
+.author-stat-card small,
+.author-skill-meter > span {
+  display: block;
+  margin: .55rem 0 1.25rem;
+  color: rgba(255, 255, 255, .62);
+  font: 800 clamp(.92rem, 1vw, 1.04rem)/1.35 var(--display);
 }
 
-.author-skill-card span {
+.author-stat-card p,
+.recognition-card p {
+  max-width: 29rem;
+  margin: 0;
+  color: rgba(255, 255, 255, .58);
+  font-size: clamp(.98rem, 1.1vw, 1.08rem);
+  line-height: 1.65;
+}
+
+.author-skill-meter {
+  align-self: center;
+}
+
+.skill-track {
+  position: relative;
+  width: min(32rem, 100%);
+  height: .75rem;
+  margin-top: 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .22);
+}
+
+.skill-track i {
   display: block;
-  margin-bottom: .9rem;
-  color: rgba(255, 255, 255, .72);
+  width: 94%;
+  height: 100%;
+  border-radius: inherit;
+  background: #a8b2bf;
+}
+
+.skill-track b {
+  position: absolute;
+  right: 4%;
+  bottom: calc(100% + .75rem);
+  padding: .55rem .7rem;
+  border-radius: .45rem;
+  background: #f7f7f7;
+  color: #08080a;
+  font: 900 .8rem/1 var(--display);
+}
+
+.skill-track b:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: .45rem solid transparent;
+  border-top-color: #f7f7f7;
+}
+
+.author-recognition {
+  padding-top: clamp(4.5rem, 8vw, 8rem);
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 6rem);
+  padding-bottom: clamp(2rem, 5vw, 5rem);
+}
+
+.recognition-card strong {
+  display: block;
+  margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
+  color: #fff;
+  font: 900 clamp(2.8rem, 4vw, 4.5rem)/1 var(--display);
+  letter-spacing: -.06em;
 }
 
 .author-rebound {
@@ -340,7 +343,8 @@ body.light-theme.author-page {
 
 body.light-theme .author-page-hero,
 body.light-theme .author-experiences,
-body.light-theme .author-skills {
+body.light-theme .author-skills,
+body.light-theme .author-recognition {
   background:
     radial-gradient(circle at 74% 20%, rgba(0, 0, 0, .05), transparent 22rem),
     linear-gradient(180deg, #f4f4f6, #e8e8ec);
@@ -349,14 +353,16 @@ body.light-theme .author-skills {
 body.light-theme .author-heading h1,
 body.light-theme .author-section-intro h2,
 body.light-theme .author-experience-item h3,
-body.light-theme .author-skill-card strong {
+body.light-theme .author-stat-card strong,
+body.light-theme .recognition-card strong {
   color: #08080a;
 }
 
 body.light-theme .author-kicker,
 body.light-theme .author-page-lead,
 body.light-theme .author-experience-item p:not(.role),
-body.light-theme .author-skill-card p {
+body.light-theme .author-stat-card p,
+body.light-theme .recognition-card p {
   color: rgba(8, 8, 10, .66);
 }
 
@@ -367,7 +373,8 @@ body.light-theme .author-experience-item {
 }
 
 body.light-theme .author-experience-item span,
-body.light-theme .author-skill-card span {
+body.light-theme .author-stat-card small,
+body.light-theme .author-skill-meter > span {
   color: rgba(8, 8, 10, .58);
 }
 
@@ -376,22 +383,16 @@ body.light-theme .author-experience-item .role {
   color: rgba(8, 8, 10, .72);
 }
 
-body.light-theme .author-skill-card {
+body.light-theme .author-skill-presentation,
+body.light-theme .recognition-grid,
+body.light-theme .author-recognition {
   border-color: rgba(8, 8, 10, .12);
-  background: rgba(255, 255, 255, .58);
 }
 
 @media (max-width: 1120px) {
-  .author-page-hero,
   .author-section-grid,
   .author-rebound {
     grid-template-columns: 1fr;
-  }
-
-  .author-page-portrait {
-    justify-self: start;
-    width: min(42rem, 100%);
-    min-height: clamp(19rem, 54vw, 32rem);
   }
 
   .author-section-intro {
@@ -419,7 +420,8 @@ body.light-theme .author-skill-card {
   }
 
   .author-experience-list,
-  .author-skill-grid {
+  .author-stat-grid,
+  .recognition-grid {
     grid-template-columns: 1fr;
   }
 
@@ -429,7 +431,4 @@ body.light-theme .author-skill-card {
     border-right: 0;
   }
 
-  .author-skill-card {
-    min-height: auto;
-  }
 }

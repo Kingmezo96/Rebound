@@ -1683,3 +1683,30 @@ body.light-theme .showcase-copy > p:not(.small-label) {
     margin: 5px;
   }
 }
+.text-link-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.1rem;
+}
+
+@media (max-width: 1180px) {
+  .desktop-nav {
+    gap: clamp(.85rem, 1.7vw, 1.55rem);
+    font-size: .66rem;
+  }
+
+  .site-header {
+    padding-inline: clamp(1rem, 2.6vw, 2.6rem);
+  }
+}
+
+@media (max-width: 920px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+}
