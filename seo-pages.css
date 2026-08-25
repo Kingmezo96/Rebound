@@ -435,7 +435,7 @@
 }
 
 .article-cover-holder {
-  width: min(88rem, 100%);
+  width: min(96rem, 100%);
   margin: 0 auto clamp(2.4rem, 4vw, 4rem);
   padding: clamp(.65rem, 1.15vw, 1rem);
   border: 1px solid rgba(255, 255, 255, .13);
@@ -450,8 +450,9 @@
 .article-cover-holder img {
   display: block;
   width: 100%;
-  height: clamp(20rem, 42vw, 34rem);
-  object-fit: contain;
+  height: auto;
+  aspect-ratio: 1600 / 701;
+  object-fit: cover;
   object-position: center;
   border-radius: clamp(.9rem, 1.8vw, 1.8rem);
   background: #050507;
@@ -734,7 +735,7 @@ body.light-theme .article-cover-holder {
   }
 
   .article-cover-holder img {
-    height: min(28rem, 92vw);
+    height: auto;
     border-radius: .9rem;
   }
 }
