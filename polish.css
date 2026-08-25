@@ -1507,6 +1507,21 @@ body.light-theme .excerpt-item small {
   text-transform: none;
 }
 
+.price-line .tier-card strong small {
+  display: inline-block;
+  margin-left: .25rem;
+  color: rgba(7, 10, 18, .5);
+  font-size: .6em;
+  font-weight: 760;
+  letter-spacing: -.02em;
+}
+
+.price-line .tier-card.active strong small,
+.price-line .tier-card:hover strong small,
+.price-line .tier-card:focus-visible strong small {
+  color: rgba(255, 255, 255, .78);
+}
+
 .home-pay-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;

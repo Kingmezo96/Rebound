@@ -7,6 +7,17 @@ const naira = new Intl.NumberFormat('en-NG', {
   maximumFractionDigits: 0
 });
 
+const usdEquivalent = {
+  1000000: '$750',
+  500000: '$325',
+  20000: '$15'
+};
+
+function priceLabel(amount) {
+  const value = naira.format(amount);
+  return usdEquivalent[amount] ? `${value} (${usdEquivalent[amount]})` : value;
+}
+
 document.querySelectorAll('[data-paystack-form]').forEach(paystackForm => {
   const root = paystackForm.closest('section') || document;
   const tierButtons = [...paystackForm.querySelectorAll('.tier-card')];
@@ -30,7 +41,7 @@ document.querySelectorAll('[data-paystack-form]').forEach(paystackForm => {
   function updateSelected(next) {
     preorder = next;
     if (selectedLabel) selectedLabel.textContent = preorder.label;
-    if (selectedAmount) selectedAmount.textContent = naira.format(preorder.amount);
+    if (selectedAmount) selectedAmount.textContent = priceLabel(preorder.amount);
     tierButtons.forEach(button => {
       const active = button.dataset.tier === preorder.tier;
       button.classList.toggle('active', active);

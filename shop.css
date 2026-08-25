@@ -9,12 +9,12 @@
 
 .shop-hero {
   position: relative;
-  min-height: 58svh;
+  min-height: 50svh;
   display: grid;
-  grid-template-columns: minmax(0, .68fr) minmax(15rem, .32fr);
+  grid-template-columns: minmax(0, .78fr);
   align-items: end;
   gap: clamp(1.6rem, 4.8vw, 5rem);
-  padding: 7.2rem var(--pad) clamp(2.4rem, 4vw, 4.2rem);
+  padding: 7rem var(--pad) clamp(2.2rem, 3.5vw, 3.8rem);
   overflow: hidden;
   background: #080808;
 }
@@ -49,8 +49,7 @@
     linear-gradient(180deg, rgba(0, 0, 0, .16), rgba(0, 0, 0, .96));
 }
 
-.shop-hero-content,
-.shop-cover {
+.shop-hero-content {
   position: relative;
   z-index: 2;
 }
@@ -94,7 +93,7 @@
 }
 
 .shop-hero .sub-title {
-  width: min(29rem, 100%);
+  width: min(34rem, 100%);
   margin: clamp(1rem, 1.8vw, 1.55rem) 0 1.25rem auto;
   color: rgba(255, 255, 255, .7);
   font-size: clamp(.88rem, 1vw, 1rem);
@@ -102,17 +101,7 @@
 }
 
 .shop-cover {
-  justify-self: end;
-  width: min(19rem, 28vw);
-  margin: 0;
-  padding: clamp(.65rem, 1vw, .9rem);
-  border: 1px solid rgba(255, 255, 255, .13);
-  border-radius: clamp(1.4rem, 2.6vw, 2.4rem);
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .035)),
-    rgba(10, 10, 10, .62);
-  box-shadow: 0 2rem 4.5rem rgba(0, 0, 0, .42);
-  overflow: hidden;
+  display: none;
 }
 
 .shop-cover:before {
@@ -209,7 +198,13 @@
 .selected-ticket b {
   color: #070a12;
   font-size: clamp(1.6rem, 2.8vw, 2.45rem);
-  line-height: .9;
+  line-height: 1;
+}
+
+.selected-ticket b small {
+  font-size: .48em;
+  font-weight: 700;
+  color: rgba(7, 10, 18, .48);
 }
 
 .preorder-form {
@@ -306,10 +301,26 @@
   line-height: 1.35;
 }
 
+.tier-card strong small {
+  display: inline-block;
+  margin-left: .28rem;
+  color: rgba(7, 10, 18, .52);
+  font-size: .56em;
+  font-weight: 760;
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+
 .tier-card:hover small,
 .tier-card:focus-visible small,
 .tier-card.active small {
   color: rgba(255, 255, 255, .62);
+}
+
+.tier-card:hover strong small,
+.tier-card:focus-visible strong small,
+.tier-card.active strong small {
+  color: rgba(255, 255, 255, .78);
 }
 
 .custom-amount,
@@ -520,8 +531,7 @@ body.light-theme .use-custom:focus-visible {
   }
 
   .shop-cover {
-    justify-self: start;
-    width: min(15rem, 56vw);
+    display: none;
   }
 
   .tier-grid {

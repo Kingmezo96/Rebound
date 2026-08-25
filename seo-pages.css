@@ -323,14 +323,16 @@
 
 .article-single-hub {
   min-height: 100svh;
-  padding-top: clamp(8rem, 13vw, 12rem);
+  padding-top: clamp(8rem, 12vw, 11rem);
   background:
-    radial-gradient(circle at 80% 12%, rgba(255, 255, 255, .055), transparent 20rem),
-    linear-gradient(180deg, #121214, #1b1b1d 42%, #111113);
+    radial-gradient(circle at 28% 17%, rgba(144, 157, 172, .1), transparent 8rem),
+    linear-gradient(180deg, #111013, #111013);
 }
 
-.article-single-hub .article-layout {
-  align-items: start;
+.article-single-hub .article-template-layout {
+  display: block;
+  width: min(82rem, 100%);
+  margin: 0 auto;
 }
 
 .article-sidebar {
@@ -380,8 +382,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding-bottom: 1.65rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .18);
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .portfolio-terms {
@@ -391,20 +393,21 @@
 }
 
 .article-page-title {
-  margin: clamp(2.4rem, 5vw, 4.8rem) 0 clamp(1.8rem, 4vw, 3rem);
+  max-width: 76rem;
+  margin: clamp(2rem, 4vw, 3.8rem) 0 clamp(1.8rem, 3.2vw, 2.8rem);
   color: #fff;
-  font: 560 clamp(4rem, 10vw, 11rem)/.82 var(--display);
-  letter-spacing: -.085em;
+  font: 500 clamp(3.8rem, 8.6vw, 9.4rem)/.95 var(--display);
+  letter-spacing: -.07em;
 }
 
 .article-content > .content.item {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem clamp(2rem, 5vw, 4rem);
-  padding: clamp(1.25rem, 2vw, 1.8rem) 0;
-  margin-bottom: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, .12);
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  padding: 0 0 clamp(4rem, 7vw, 7rem);
+  margin-bottom: 0;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .article-content .content h6 {
@@ -419,22 +422,22 @@
 
 .excerpt-article-list {
   display: grid;
-  margin-top: clamp(3rem, 6vw, 5rem);
-  border-top: 1px solid rgba(255, 255, 255, .18);
+  margin-top: clamp(3rem, 5.5vw, 5rem);
+  border-top: 1px solid rgba(255, 255, 255, .52);
 }
 
 .excerpt-article-item {
-  border-bottom: 1px solid rgba(255, 255, 255, .18);
+  border-bottom: 1px solid rgba(255, 255, 255, .52);
 }
 
 .excerpt-article-item summary {
   cursor: pointer;
   list-style: none;
   display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: clamp(1rem, 3vw, 2.8rem);
   align-items: center;
-  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+  padding: clamp(1.7rem, 3.4vw, 3rem) 0;
   color: #fff;
 }
 
@@ -445,7 +448,7 @@
 .excerpt-article-item summary strong {
   display: block;
   color: #fff;
-  font: 540 clamp(2.05rem, 4.2vw, 4.8rem)/.98 var(--display);
+  font: 500 clamp(2.05rem, 4vw, 4.6rem)/1 var(--display);
   letter-spacing: -.055em;
 }
 
@@ -457,6 +460,8 @@
 }
 
 .excerpt-number {
+  display: block;
+  margin-bottom: .65rem;
   color: rgba(255, 255, 255, .45);
   font: 800 .82rem/1 var(--display);
   letter-spacing: .08em;
@@ -474,8 +479,8 @@
 }
 
 .excerpt-article-copy {
-  max-width: 49rem;
-  margin-left: calc(5rem + clamp(1rem, 3vw, 2.8rem));
+  max-width: 58rem;
+  margin-left: 0;
   padding: 0 0 clamp(1.8rem, 4vw, 3rem);
 }
 

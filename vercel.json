@@ -6,6 +6,24 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/podcast",
+      "destination": "/podcast.html"
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/podcast/",
+      "destination": "/podcast.html"
+    }
+  ],
   "headers": [
     {
       "source": "/sitemap.xml",
