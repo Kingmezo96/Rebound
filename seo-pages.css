@@ -435,9 +435,9 @@
 }
 
 .article-cover-holder {
-  width: min(96rem, 100%);
+  width: min(88rem, 100%);
   margin: 0 auto clamp(2.4rem, 4vw, 4rem);
-  padding: clamp(.42rem, .9vw, .75rem);
+  padding: clamp(.65rem, 1.15vw, 1rem);
   border: 1px solid rgba(255, 255, 255, .13);
   border-radius: clamp(1.2rem, 2.4vw, 2.4rem);
   background:
@@ -450,9 +450,9 @@
 .article-cover-holder img {
   display: block;
   width: 100%;
-  height: clamp(13rem, 26vw, 22rem);
-  object-fit: cover;
-  object-position: center 58%;
+  height: clamp(20rem, 42vw, 34rem);
+  object-fit: contain;
+  object-position: center;
   border-radius: clamp(.9rem, 1.8vw, 1.8rem);
   background: #050507;
 }
@@ -734,7 +734,7 @@ body.light-theme .article-cover-holder {
   }
 
   .article-cover-holder img {
-    height: 13.5rem;
+    height: min(28rem, 92vw);
     border-radius: .9rem;
   }
 }
