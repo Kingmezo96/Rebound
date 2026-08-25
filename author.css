@@ -164,6 +164,7 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
 }
 
+.author-biography,
 .author-experiences,
 .author-skills {
   background: #1b1b1d;
@@ -236,6 +237,32 @@
   color: rgba(255, 255, 255, .58);
   font-size: clamp(.94rem, 1.06vw, 1.04rem);
   line-height: 1.66;
+}
+
+.author-biography {
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.author-biography-copy {
+  max-width: 58rem;
+}
+
+.author-biography-copy p {
+  margin: 0 0 1.1rem;
+  color: rgba(255, 255, 255, .62);
+  font-size: clamp(1rem, 1.14vw, 1.12rem);
+  line-height: 1.72;
+}
+
+.author-biography-copy .author-biography-lead {
+  margin-bottom: clamp(1.4rem, 2.5vw, 2.2rem);
+  color: #fff;
+  font-size: clamp(1.2rem, 1.8vw, 1.65rem);
+  line-height: 1.38;
+}
+
+.author-biography-copy strong {
+  color: #fff;
 }
 
 .author-skills.awards.skills {
@@ -450,6 +477,7 @@ body.light-theme.author-page {
 }
 
 body.light-theme .author-page-hero,
+body.light-theme .author-biography,
 body.light-theme .author-experiences,
 body.light-theme .author-skills,
 body.light-theme .author-image-section {
@@ -468,10 +496,16 @@ body.light-theme .recognition-card strong {
 
 body.light-theme .author-kicker,
 body.light-theme .author-page-lead,
+body.light-theme .author-biography-copy p,
 body.light-theme .author-experience-item p:not(.role),
 body.light-theme .author-stat-card p,
 body.light-theme .recognition-card p {
   color: rgba(8, 8, 10, .66);
+}
+
+body.light-theme .author-biography-copy .author-biography-lead,
+body.light-theme .author-biography-copy strong {
+  color: #08080a;
 }
 
 body.light-theme .author-socials a {
@@ -576,6 +610,7 @@ body.light-theme .author-recognition {
     margin-left: 0;
   }
 
+  .author-biography,
   .author-experiences,
   .author-skills.awards.skills {
     padding-top: clamp(3.8rem, 13vw, 5rem);
