@@ -4,6 +4,16 @@
       "source": "/shop.html",
       "destination": "/shop/",
       "permanent": true
+    },
+    {
+      "source": "/blog.html",
+      "destination": "/articles/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/articles/",
+      "permanent": true
     }
   ],
   "rewrites": [
