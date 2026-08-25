@@ -255,6 +255,12 @@
   align-items: start;
 }
 
+.brilio-col,
+.items .item,
+.items .item .content {
+  min-width: 0;
+}
+
 .sticky .intro {
   position: sticky;
   top: 7rem;
@@ -515,12 +521,24 @@ body.light-theme .author-recognition {
 
 @media (max-width: 1120px) {
   .author-section-grid,
+  .brilio-row,
   .author-rebound {
     grid-template-columns: 1fr;
   }
 
-  .author-section-intro {
+  .author-section-intro,
+  .sticky .intro {
     position: static;
+  }
+
+  .items {
+    grid-template-columns: 1fr;
+    gap: clamp(1.6rem, 5vw, 2.6rem);
+  }
+
+  .items .item .content,
+  .recognition-items .item .content {
+    min-height: auto;
   }
 }
 
@@ -558,6 +576,25 @@ body.light-theme .author-recognition {
     margin-left: 0;
   }
 
+  .author-experiences,
+  .author-skills.awards.skills {
+    padding-top: clamp(3.8rem, 13vw, 5rem);
+    padding-bottom: clamp(3.8rem, 13vw, 5rem);
+  }
+
+  .author-section-grid,
+  .brilio-row {
+    gap: clamp(1.6rem, 8vw, 2.4rem);
+  }
+
+  .author-section-intro h2,
+  .author-skills .intro .title {
+    max-width: 11ch;
+    font-size: clamp(2.75rem, 15vw, 4.6rem);
+    line-height: .92;
+    letter-spacing: -.065em;
+  }
+
   .author-experience-list,
   .author-stat-grid,
   .recognition-grid {
@@ -570,4 +607,79 @@ body.light-theme .author-recognition {
     border-right: 0;
   }
 
+  .author-experience-item {
+    padding: clamp(1.35rem, 6vw, 2rem) 0;
+  }
+
+  .author-experience-item h3 {
+    margin-top: 1.2rem;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .author-experience-item p:not(.role),
+  .author-skill-card p,
+  .skills .item p,
+  .awards .item p {
+    max-width: none;
+    font-size: clamp(.96rem, 4.3vw, 1.08rem);
+    line-height: 1.58;
+  }
+
+  .skill-items,
+  .recognition-items {
+    width: 100%;
+  }
+
+  .skills .item .heading {
+    gap: .5rem;
+    flex-wrap: nowrap;
+  }
+
+  .skills .item .heading .title {
+    max-width: 100%;
+    font-size: clamp(2.8rem, 15vw, 4.25rem);
+    line-height: .9;
+    letter-spacing: -.075em;
+    overflow-wrap: anywhere;
+  }
+
+  .skills .item span,
+  .progress .title {
+    font-size: clamp(.88rem, 4vw, 1rem);
+    line-height: 1.3;
+  }
+
+  .progress-content {
+    min-height: 6.5rem;
+    align-items: end;
+  }
+
+  .progress {
+    width: 100%;
+    margin-top: 3.4rem;
+  }
+
+  .skills hr {
+    margin: clamp(3rem, 12vw, 4rem) 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .author-page .section-pad {
+    padding-left: clamp(1.2rem, 5vw, 1.5rem);
+    padding-right: clamp(1.2rem, 5vw, 1.5rem);
+  }
+
+  .author-skills .intro .title,
+  .author-section-intro h2 {
+    font-size: clamp(2.55rem, 14vw, 3.8rem);
+  }
+
+  .skills .item .icon {
+    font-size: 1.25rem;
+  }
+
+  .skills .item .heading .title {
+    font-size: clamp(2.55rem, 13.5vw, 3.55rem);
+  }
 }
