@@ -1502,9 +1502,10 @@ body.light-theme .excerpt-item small {
   display: block;
   margin-top: .45rem;
   color: currentColor;
-  font: 650 clamp(1rem, 1.55vw, 1.35rem)/1 var(--display);
+  font: 650 clamp(.95rem, 1.35vw, 1.25rem)/1.08 var(--display);
   letter-spacing: -.04em;
   text-transform: none;
+  white-space: normal;
 }
 
 .price-line .tier-card strong small {
@@ -1520,6 +1521,15 @@ body.light-theme .excerpt-item small {
 .price-line .tier-card:hover strong small,
 .price-line .tier-card:focus-visible strong small {
   color: rgba(255, 255, 255, .78);
+}
+
+.price-line .tier-card.active span,
+.price-line .tier-card:hover span,
+.price-line .tier-card:focus-visible span,
+.price-line .tier-card.active strong,
+.price-line .tier-card:hover strong,
+.price-line .tier-card:focus-visible strong {
+  color: #fff;
 }
 
 .home-pay-row {

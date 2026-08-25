@@ -283,14 +283,22 @@
   color: rgba(255, 255, 255, .62);
 }
 
+.tier-card:hover .service-content > span:first-child,
+.tier-card:focus-visible .service-content > span:first-child,
+.tier-card.active .service-content > span:first-child {
+  color: rgba(255, 255, 255, .78);
+}
+
 .tier-card strong {
   display: block;
   margin: 0;
   color: currentColor;
-  font-size: clamp(1.15rem, 2vw, 1.7rem);
-  line-height: 1;
+  font-size: clamp(1.05rem, 1.55vw, 1.45rem);
+  line-height: 1.08;
   letter-spacing: -.04em;
   text-align: left;
+  white-space: normal;
+  word-break: keep-all;
 }
 
 .tier-card small {
@@ -321,6 +329,12 @@
 .tier-card:focus-visible strong small,
 .tier-card.active strong small {
   color: rgba(255, 255, 255, .78);
+}
+
+.tier-card:hover strong,
+.tier-card:focus-visible strong,
+.tier-card.active strong {
+  color: #fff;
 }
 
 .custom-amount,

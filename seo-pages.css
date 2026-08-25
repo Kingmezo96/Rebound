@@ -33,6 +33,10 @@
   align-items: end;
 }
 
+.seo-hero-grid--text {
+  grid-template-columns: minmax(0, .86fr);
+}
+
 .seo-kicker,
 .article-date {
   margin: 0 0 1rem;
