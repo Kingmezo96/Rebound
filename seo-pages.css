@@ -82,6 +82,12 @@
   background: #1b1b1d;
 }
 
+.memoir-section {
+  background:
+    radial-gradient(circle at 14% 14%, rgba(255, 255, 255, .06), transparent 18rem),
+    linear-gradient(180deg, #111113, #1b1b1d);
+}
+
 .seo-copy-grid,
 .articles-grid,
 .article-layout,
@@ -113,6 +119,80 @@
   flex-wrap: wrap;
   gap: .85rem;
   margin-top: 1.4rem;
+}
+
+.memoir-grid {
+  display: grid;
+  grid-template-columns: minmax(12rem, .32fr) minmax(0, .68fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: start;
+}
+
+.memoir-heading {
+  display: grid;
+  gap: clamp(1.25rem, 2.4vw, 2rem);
+}
+
+.memoir-heading h2 {
+  margin: 0;
+  color: #fff;
+  font: 520 clamp(3rem, 6.2vw, 7.4rem)/.9 var(--display);
+  letter-spacing: -.07em;
+}
+
+.memoir-copy {
+  display: grid;
+  gap: 1.05rem;
+  max-width: 58rem;
+}
+
+.memoir-copy p,
+.memoir-read p {
+  color: rgba(255, 255, 255, .66);
+  font-size: clamp(1rem, 1.16vw, 1.12rem);
+  line-height: 1.72;
+}
+
+.memoir-for {
+  margin: 0;
+  color: rgba(255, 255, 255, .92) !important;
+  font: 800 .8rem/1 var(--display) !important;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.memoir-read {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: clamp(3rem, 7vw, 7rem);
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(255, 255, 255, .12);
+}
+
+.memoir-read article {
+  min-height: 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3.2vw, 3rem);
+  background:
+    radial-gradient(circle at 74% 8%, rgba(255, 255, 255, .055), transparent 14rem),
+    #1b1b1d;
+}
+
+.memoir-read span {
+  color: rgba(255, 255, 255, .42);
+  font: 850 .72rem/1 var(--display);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.memoir-read h3 {
+  margin: clamp(1.5rem, 3vw, 2.5rem) 0 .35rem;
+  color: #fff;
+  font: 520 clamp(2.2rem, 3.8vw, 4.6rem)/.92 var(--display);
+  letter-spacing: -.065em;
 }
 
 .article-card-grid {
@@ -603,11 +683,19 @@ body.light-theme .authority-panel {
     linear-gradient(180deg, #f4f4f6, #e8e8ec);
 }
 
+body.light-theme .memoir-section {
+  background:
+    radial-gradient(circle at 14% 14%, rgba(8, 8, 10, .05), transparent 18rem),
+    linear-gradient(180deg, #f8f8fa, #e8e8ec);
+}
+
 body.light-theme .seo-hero h1,
 body.light-theme .seo-copy h2,
 body.light-theme .articles-index h2,
 body.light-theme .article-body h2,
 body.light-theme .authority-panel h2,
+body.light-theme .memoir-heading h2,
+body.light-theme .memoir-read h3,
 body.light-theme .article-card h3,
 body.light-theme .authority-card h3 {
   color: #08080a;
@@ -617,15 +705,31 @@ body.light-theme .seo-hero p,
 body.light-theme .seo-copy p,
 body.light-theme .article-body p,
 body.light-theme .article-body li,
+body.light-theme .memoir-copy p,
+body.light-theme .memoir-read p,
 body.light-theme .article-card p,
 body.light-theme .authority-card p {
   color: rgba(8, 8, 10, .68);
 }
 
 body.light-theme .article-card,
-body.light-theme .authority-card {
+body.light-theme .authority-card,
+body.light-theme .memoir-read article {
   border-color: rgba(8, 8, 10, .12);
   background: rgba(255, 255, 255, .58);
+}
+
+body.light-theme .memoir-read {
+  border-color: rgba(8, 8, 10, .12);
+  background: rgba(8, 8, 10, .12);
+}
+
+body.light-theme .memoir-for {
+  color: rgba(8, 8, 10, .88) !important;
+}
+
+body.light-theme .memoir-read span {
+  color: rgba(8, 8, 10, .5);
 }
 
 body.light-theme .article-card .card-overlay {
@@ -722,7 +826,12 @@ body.light-theme .article-cover-holder {
   .seo-copy-grid,
   .articles-grid,
   .article-layout,
-  .authority-grid {
+  .authority-grid,
+  .memoir-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .memoir-read {
     grid-template-columns: 1fr;
   }
 
