@@ -115,6 +115,13 @@
   margin-top: 1.4rem;
 }
 
+.seo-link-row .is-disabled {
+  cursor: default;
+  opacity: .58;
+  pointer-events: none;
+  user-select: none;
+}
+
 .article-card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
